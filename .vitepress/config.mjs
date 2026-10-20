@@ -5,30 +5,26 @@ export default defineConfig({
   title: "Genshin SkillObj",
   description: "For all raw + fixed skillobj files",
   
+  // Add this so VitePress automatically fixes your local path for Discord embeds when building the site!
+  sitemap: {
+    hostname: 'https://genshin-skillobj.pages.dev/' // <-- Put your actual website link here
+  },
+  
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
     
-    // --- Link Preview / Image Embed Tags ---
-    // The image that will display in the embed (Must be a full absolute URL)
-    ['meta', { property: 'og:image', content: 'banner.png' }],
+    // --- Added leading slash for local public folder path ---
+    ['meta', { property: 'og:image', content: '/banner.png' }],
     
-    // Platform compatibility tags
     ['meta', { property: 'og:title', content: 'Genshin SkillObj' }],
     ['meta', { property: 'og:description', content: 'For all raw + fixed skillobj files' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    
-    // Optional: Accent color strip for Discord/Slack embeds
     ['meta', { name: 'theme-color', content: '#893d54' }]
   ], 
 
   themeConfig: {
     logo: '/logo.png',
-
-    search: {
-      provider: 'local'
-    },
-    nav: [
-      { text: 'Request', link: '/req' } 
-    ]
+    search: { provider: 'local' },
+    nav: [ { text: 'Request', link: '/req' } ]
   }
 })
