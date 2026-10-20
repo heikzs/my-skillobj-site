@@ -7,7 +7,7 @@ hero:
   text: 
   tagline: "For all raw + fixed genshin skillobj files"
   image:
-    src: ./logo.png
+    src: ./pic 3.png
     alt: Genshin Banner
   actions:
     - theme: brand
@@ -22,3 +22,8 @@ features:
     details: Made by an inexperienced blender user, really slow progress @_@
 ---
 
+<img 
+  src="/pic 1.png" 
+  alt="Mascot" 
+  style="position: fixed; right: 40px; bottom: 40px; width: 160px; z-index: 100; pointer-events: none;" 
+/>
