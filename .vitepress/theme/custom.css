@@ -1,9 +1,11 @@
 :root {
-  /* This changes the "Genshin SkillObj" title text color */
-  --vp-home-hero-name-color: #a66876; 
+  --vp-home-hero-name-color: #a66876;
 
-  /* This changes the primary "Let's Go!" button color */
-  --vp-c-brand-1: #a66876; 
-  --vp-c-brand-2: #a66876; /* Hover state */
-  --vp-c-brand-3: #893d54; /* Active click state */
+  --vp-c-brand-1: #a66876;
+  --vp-c-brand-2: #a66876; 
+  --vp-c-brand-3: #893d54; 
+} 
+
+.my-audio-title-color {
+  color: #a66876 !important;
 }

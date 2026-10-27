@@ -1,6 +1,6 @@
 # SkillObj Request
 
-Feel free to request idles or bursts too! but visual effects are NOT allowed <span style="color: #eea5a5;">(¬`‸´¬)</span>
+Feel free to request idles or bursts too! Skill effects are totally allowed but i'll be leaving them completely raw <span style="color: #eea5a5;">(¬`‸´¬)</span>
 <iframe src="https://tally.so/embed/RWKXjd" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="SkillObj Request Form"></iframe>
 
 ::: info <span style="color: #eea5a5;">(♡´ᵕ`)</span>

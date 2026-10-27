@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Genshin SkillObj"
   text: 
-  tagline: "For all raw + fixed genshin skillobj files"
+  tagline: "For all raw + fixed genshin SkillObj files"
   image:
     src: ./pic 3.png
     alt: Genshin Banner

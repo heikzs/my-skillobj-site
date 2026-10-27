@@ -5,19 +5,19 @@ outline: deep
 # ⊹ 𖦹 Info
 
 ---
-All ripped using [AnimeStudio](https://github.com/Escartem/AnimeStudio) with my own custom fixes added and using the [Festivity Shader](https://github.com/festivities/Blender-miHoYo-Shaders)! 
+All assets ripped using [AnimeStudio](https://github.com/Escartem/AnimeStudio) with the [Festivity Shader](https://github.com/festivities/Blender-miHoYo-Shaders) applied ! 
 
-*Except for like 20% of the files which were ripped and fixed by someone else... but the other 80% is all MEEE! <span style="color: #eea5a5;">(˶˃𐃷 ˂˶)</span>*
+*Except for like 20% of the files which is from [Zeroruka](https://github.com/zeroruka/GI-Assets/tree/main/SkillObj/Characters)... but the other 80% is all MEEE! <span style="color: #eea5a5;">(˶˃𐃷 ˂˶)</span>*
 
 ## Compatibility
-Can be use in both **Normal Blender (3.0+)** and **Goo Blender (4.0+)**! <span style="color: #eea5a5;">yayy (˶ˆᗜˆ˵)</span>
+Assets can be use in both **Normal Blender (3.0+)** and **Goo Blender (4.0+)**! <span style="color: #eea5a5;">yayy (˶ˆᗜˆ˵)</span>
 
 
 ## Inside the ZIP!
 
 • `.blend` file
 
-• Raw folder: Just the original `.fbx` mesh and textures
+• Raw files: Just the original `.fbx` mesh and their textures
 
 
 ## Match the SkillObj lighting with the character!
@@ -28,6 +28,10 @@ Can be use in both **Normal Blender (3.0+)** and **Goo Blender (4.0+)**! <span s
 </video>
 
 Yep! it's easy as that  <span style="color: #eea5a5;">⸜(｡˃ ᵕ ˂ )⸝♡</span>
+
+## <span style="color: #eea5a5;">ᯠ ⑅ ᯄ</span>
+
+If there's any problem with the assets, you can reach me out at [Omatsuri Discord Server](https://discord.gg/85rP9SpAkF)
 
 <img 
   src="/pic 4.png" 
