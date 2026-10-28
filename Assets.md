@@ -5,17 +5,18 @@ outline: deep
 <img 
   src="/pic 2.png" 
   alt="Mascot" 
-  style="position: fixed; right: 40px; bottom: 40px; width: 160px; z-index: 100; pointer-events: none;" 
+  style="position: fixed; right: 30px; bottom: 30px; width: 120px; z-index: 100; pointer-events: none;" 
 />
 
 ::: warning Warning ! 
-it's messy af (ㅅ´ ˘ `) 
+it's messy (ㅅ´ ˘ `) 
 :::
 
 # ⭑.ᐟ Assets
 > **Heads up:** Skill effects (eg., kazuha's skill/burst) aren't included !
 
-## Don't find the one you're looking for? probably im still working on it! check out [this page](/req.md)
+## <span style="color: #eea5a5;">⢏⢢⣀⡔⡹ *</span>
+Don't find the one you're looking for? probably im still working on it! check out [this page](/req.md)
 
 ## <img src="/Shikanoin Heizou_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou
 * 
@@ -24,14 +25,14 @@ it's messy af (ㅅ´ ˘ `)
 * [Leaf](https://files.catbox.moe/rvztba.zip)
 
 ## <img src="/Lohen_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" />  Lohen
-* Knife
+* [Knife](https://files.catbox.moe/ocx3ig.zip)
 * BookShow
 * BubbleGum
 * Bottle
 
 ## <img src="/Kinich_Icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kinich
-* HandCannon
-* Ajaw
+* [HandCannon](https://files.catbox.moe/a9b80m.zip)
+* [Ajaw](https://files.catbox.moe/165r89.zip)
 * [BigAjaw](https://files.catbox.moe/omdojb.zip) - raw files
 
 ## Mualani 
@@ -41,23 +42,23 @@ it's messy af (ㅅ´ ˘ `)
 * 
 
 ## <img src="/Kirara_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kirara
-* DeliveryBox + Glasses
+* [DeliveryBox + Glasses](https://files.catbox.moe/xg2z6p.zip)
 
 ## <img src="/Vesna_Icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Vesna
-* MagicSword_Small
+* [MagicSword_Small](https://files.catbox.moe/2j09j1.zip)
 * MagicSword_Small_Muti
-* PlateAndFood
-* Scepter
+* [PlateAndFood](https://files.catbox.moe/3zyxdr.zip)
+* [Scepter](https://files.catbox.moe/dj28da.zip)
 
 ## <img src="/Albedo_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Albedo
-* Opus
+* [Opus](https://files.catbox.moe/59lkft.zip)
 * Gravestone
-* Magnum
+* [Magnum](https://files.catbox.moe/vtyxfr.zip)
 * Canvas
 
 ## Al-Haitham
-* ShowKey
-* RuneWeapon
+* [ShowKey](https://files.catbox.moe/dfm8c4.zip)
+* [RuneWeapon (Khukuri](https://files.catbox.moe/76121v.zip)
 
 ## Kaveh
 * 
@@ -66,37 +67,37 @@ it's messy af (ㅅ´ ˘ `)
 * IceGrenade
 
 ## Arataki Itto
-* Comb
-* OniBull
+* [Comb](https://files.catbox.moe/g8t6zq.zip)
+* [OniBull](https://files.catbox.moe/4zybvn.zip)
 
 ## Beidou
-* Beisht
+* [Thundershield (Beisht)](https://files.catbox.moe/nifc2i.zip)
 
 ## Candace 
-* MagicShield
+* [MagicShield](https://files.catbox.moe/3tc3yt.zip)
 
 ## Chongyun 
-* IceCharm
+* [IceCharm](https://files.catbox.moe/a4j28x.zip)
 
 ## Xingqiu 
 * 
 
 ## Call-ay? 
-* MadCat
+* [MadCat](https://files.catbox.moe/nzlkbo.zip)
 
 ## Cy-no 
-* Claw
+* [Claw](https://files.catbox.moe/3y0xc0.zip)
 
 ## Thigh-nari 
 * ShowFlower
 * Arrow
 
 ## Dehya 
-* Makeup
+* [Makeup](https://files.catbox.moe/mqj823.zip)
 
 ## Diluc 
-* Falcon
-* Flamme_Scroll
+* [Falcon](https://files.catbox.moe/fnb715.zip)
+* [Flamme_Scroll](https://files.catbox.moe/murkpc.zip)
 
 ## Dori
 * Sprite
@@ -106,7 +107,7 @@ it's messy af (ㅅ´ ˘ `)
 * FischlCrow
 
 ## Freminet 
-* Penguin
+* [Penguin](https://files.catbox.moe/51zuyd.zip)
 
 ## Lyney 
 * 
@@ -122,7 +123,7 @@ it's messy af (ㅅ´ ˘ `)
 
 ## Gaming 
 * LionPet
-* LionHead
+* LionHead](https://files.catbox.moe/c3g426.zip)
 
 ## Lanyan 
 * 
@@ -142,7 +143,7 @@ it's messy af (ㅅ´ ˘ `)
 * ElementalBurstArmor
 
 ## Kamisato Ayato 
-* BubbleTea
+* [BubbleTea](https://files.catbox.moe/er5804.zip)
 * AyatoShadow
 
 ## Kamisato Ayaka 

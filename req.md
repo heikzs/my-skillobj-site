@@ -14,5 +14,5 @@ Want to see which characters are actively being worked on?
 <img 
   src="/pic 5.png" 
   alt="Mascot" 
-  style="position: fixed; right: 40px; bottom: 40px; width: 160px; z-index: 100; pointer-events: none;" 
+  style="position: fixed; right: 30px; bottom: 30px; width: 120px; z-index: 100; pointer-events: none;" 
 />
