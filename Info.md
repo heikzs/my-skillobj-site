@@ -31,7 +31,7 @@ Yep! it's easy as that  <span style="color: #eea5a5;">⸜(｡˃ ᵕ ˂ )⸝♡</
 
 ## <span style="color: #eea5a5;">ᯠ ⑅ ᯄ</span>
 
-If there's any problem with the assets, you can reach me out at [Omatsuri Discord Server](https://discord.gg/85rP9SpAkF)
+If there's any problem with the assets, you can reach me out at [Aplaybox](https://www.aplaybox.com/u/360614211
 
 <img 
   src="/pic 4.png" 

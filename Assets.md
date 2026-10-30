@@ -58,7 +58,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## Al-Haitham
 * [ShowKey](https://files.catbox.moe/dfm8c4.zip)
-* [RuneWeapon (Khukuri](https://files.catbox.moe/76121v.zip)
+* [RuneWeapon (Khukuri)](https://files.catbox.moe/76121v.zip)
 
 ## Kaveh
 * 
@@ -71,33 +71,33 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * [OniBull](https://files.catbox.moe/4zybvn.zip)
 
 ## Beidou
-* [Thundershield (Beisht)](https://files.catbox.moe/nifc2i.zip)
+* [Thundershield (Beisht)](https://files.catbox.moe/95rzze.zip)
 
 ## Candace 
-* [MagicShield](https://files.catbox.moe/3tc3yt.zip)
+* [MagicShield](https://files.catbox.moe/reegwp.zip)
 
 ## Chongyun 
-* [IceCharm](https://files.catbox.moe/a4j28x.zip)
+* [IceCharm](https://files.catbox.moe/0mmm7e.zip)
 
 ## Xingqiu 
 * 
 
 ## Call-ay? 
-* [MadCat](https://files.catbox.moe/nzlkbo.zip)
+* [MadCat](https://files.catbox.moe/uw9qh9.zip)
 
 ## Cy-no 
-* [Claw](https://files.catbox.moe/3y0xc0.zip)
+* [Clawh](https://files.catbox.moe/fvlq6.zip)
 
 ## Thigh-nari 
 * ShowFlower
 * Arrow
 
 ## Dehya 
-* [Makeup](https://files.catbox.moe/mqj823.zip)
+* [Makeup](https://files.catbox.moe/pfw9zz.zip)
 
 ## Diluc 
-* [Falcon](https://files.catbox.moe/fnb715.zip)
-* [Flamme_Scroll](https://files.catbox.moe/murkpc.zip)
+* [Falcon](https://files.catbox.moe/zrodfy.zip)
+* [Flamme_Scroll](https://files.catbox.moe/dqabn6.zip)
 
 ## Dori
 * Sprite
@@ -107,7 +107,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * FischlCrow
 
 ## Freminet 
-* [Penguin](https://files.catbox.moe/51zuyd.zip)
+* [Penguin](https://files.catbox.moe/j42gfu.zip)
 
 ## Lyney 
 * 
@@ -122,8 +122,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * 
 
 ## Gaming 
-* LionPet
-* LionHead](https://files.catbox.moe/c3g426.zip)
+* [LionPet](https://files.catbox.moe/c3g426.zip)
+* LionHead
 
 ## Lanyan 
 * 
@@ -143,7 +143,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * ElementalBurstArmor
 
 ## Kamisato Ayato 
-* [BubbleTea](https://files.catbox.moe/er5804.zip)
+* [BubbleTea](https://files.catbox.moe/bl1dc4.zip)
 * AyatoShadow
 
 ## Kamisato Ayaka 
@@ -247,6 +247,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## Kujou Sara
 * Wing
+* Uchiwa
 
 ## Mitya
 
