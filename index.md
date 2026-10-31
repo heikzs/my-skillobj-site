@@ -25,5 +25,17 @@ features:
 <img 
   src="/pic 1.png" 
   alt="Mascot" 
-  style="position: fixed; right: 30px; bottom: 30px; width: 120px; z-index: 100; pointer-events: none;" 
+  class="floating-mascot"
+  style="position: fixed; right: 30px; bottom: 30px; width: 120px; z-index: 100; pointer-events: auto; cursor: pointer;" 
+/>
+
+<style>
+.floating-mascot {
+  transition: transform 0.25s ease-in-out; 
+}
+
+.floating-mascot:hover {
+  transform: scale(1.3); 
+}
+</style>
 />

@@ -5,8 +5,19 @@ outline: deep
 <img 
   src="/pic 2.png" 
   alt="Mascot" 
-  style="position: fixed; right: 30px; bottom: 30px; width: 120px; z-index: 100; pointer-events: none;" 
+  class="floating-mascot"
+  style="position: fixed; right: 30px; bottom: 30px; width: 120px; z-index: 100; pointer-events: auto; cursor: pointer;" 
 />
+
+<style>
+.floating-mascot {
+  transition: transform 0.25s ease-in-out; 
+}
+
+.floating-mascot:hover {
+  transform: scale(1.3); 
+}
+</style>
 
 ::: warning Warning ! 
 it's messy (ㅅ´ ˘ `) 
@@ -27,13 +38,13 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## <img src="/Lohen_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" />  Lohen
 * [Knife](https://files.catbox.moe/ocx3ig.zip)
 * BookShow
-* BubbleGum
+* [BubbleGum](https://files.catbox.moe/cytlrz.zip) - raw
 * Bottle
 
 ## <img src="/Kinich_Icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kinich
 * [HandCannon](https://files.catbox.moe/a9b80m.zip)
 * [Ajaw](https://files.catbox.moe/165r89.zip)
-* [BigAjaw](https://files.catbox.moe/omdojb.zip) - raw files
+* [BigAjaw](https://files.catbox.moe/omdojb.zip) - raw
 
 ## Mualani 
 * 
@@ -46,13 +57,13 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## <img src="/Vesna_Icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Vesna
 * [MagicSword_Small](https://files.catbox.moe/2j09j1.zip)
-* MagicSword_Small_Muti
+* [MagicSword_Small_Muti](https://files.catbox.moe/wiyqii.zip)
 * [PlateAndFood](https://files.catbox.moe/3zyxdr.zip)
 * [Scepter](https://files.catbox.moe/dj28da.zip)
 
 ## <img src="/Albedo_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Albedo
 * [Opus](https://files.catbox.moe/59lkft.zip)
-* Gravestone
+* [Gravestone](https://files.catbox.moe/dlhayu.zip) - raw
 * [Magnum](https://files.catbox.moe/vtyxfr.zip)
 * Canvas
 
@@ -89,8 +100,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * [Clawh](https://files.catbox.moe/fvlq6.zip)
 
 ## Thigh-nari 
-* ShowFlower
-* Arrow
+* [ShowFlower](https://files.catbox.moe/5p3daw.zip)
+* [Arrow](https://files.catbox.moe/sbiebp.zip)
 
 ## Dehya 
 * [Makeup](https://files.catbox.moe/pfw9zz.zip)
@@ -100,11 +111,11 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * [Flamme_Scroll](https://files.catbox.moe/dqabn6.zip)
 
 ## Dori
-* Sprite
-* Lantern
+* [Sprite](https://files.catbox.moe/vegekl.zip)
+* [Lantern](https://files.catbox.moe/hh1yny.zip)
 
 ## Fischl 
-* FischlCrow
+* [FischlCrow](https://files.catbox.moe/0na3kd.zip)
 
 ## Freminet 
 * [Penguin](https://files.catbox.moe/j42gfu.zip)
@@ -247,7 +258,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## Kujou Sara
 * Wing
-* Uchiwa
+* [Uchiwa](https://files.catbox.moe/vegekl.zip)
 
 ## Mitya
 
