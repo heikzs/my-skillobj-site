@@ -39,7 +39,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * [Knife](https://files.catbox.moe/ocx3ig.zip)
 * BookShow
 * [BubbleGum](https://files.catbox.moe/cytlrz.zip) - raw
-* Bottle
+* [Bottle](https://files.catbox.moe/pl49fu.zip)
 
 ## <img src="/Kinich_Icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kinich
 * [HandCannon](https://files.catbox.moe/a9b80m.zip)
