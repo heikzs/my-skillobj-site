@@ -13,10 +13,14 @@ All assets ripped using [AnimeStudio](https://github.com/Escartem/AnimeStudio) w
 Assets can be use in both **Normal Blender (3.0+)** and **Goo Blender (4.0+)**! <span style="color: #eea5a5;">yayy (˶ˆᗜˆ˵)</span>
 
 ## Inside the ZIP !
-* `.blend` file
+* Ready to use `.blend` file
 * Raw files: Just the original `.fbx` mesh and their textures
 
 ## Match the SkillObj lighting !
+1. Select the object, then **Shift + select** the character.
+2. Go to the **Modifier Properties** tab
+3. Navigate to the **Light Vectors modifier** and click the small **dropdown arrow**
+4. Select **Copy to Selected**
 <div>
 <video width="100%" controls style="border-radius: 8px; margin: 15px 0;">
   <source src="/match the lighting.mp4" type="video/mp4" />
@@ -27,7 +31,6 @@ Assets can be use in both **Normal Blender (3.0+)** and **Goo Blender (4.0+)**! 
 1. Go to the top menu and select **File > External Data > Find Missing Files**
 2. Navigate to the folder where the texture images are stored
 3. Click **Find Missing Files**
-
 <div>
 <video width="100%" controls style="border-radius: 8px; margin: 15px 0;">
   <source src="/missing textures1.mp4" type="video/mp4" />
@@ -41,11 +44,10 @@ Assets can be use in both **Normal Blender (3.0+)** and **Goo Blender (4.0+)**! 
 
 <br>
 
-1. Select the object and open **Shading** workspace
+1. Open **Shading** workspace and select the object
 2. Locate the **Image Texture node** (Diffuse, Lightmap or Normal map)
-3. Click the Folder icon **(Open Image)** on that node
-4. Browse to the exact location of the texture image file, select it, and click **Open**
-
+3. Click the **X** button next to the image name, then click the Folder icon **(Open Image)**
+4. Browse to the exact location of the texture images file, select it, and click **Open**
 <div>
 <video width="100%" controls style="border-radius: 8px; margin: 15px 0;">
   <source src="/missing textures2.mp4" type="video/mp4">
