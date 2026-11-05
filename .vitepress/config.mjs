@@ -17,10 +17,8 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:url', content: `${SITE}/` }],
     ['meta', { property: 'og:title', content: 'Genshin SkillObj' }],
-    ['meta', { property: 'og:description', content: 'For all raw + fixed skillobj files' }],
+    ['meta', { property: 'og:description', content: 'For all raw + fixed skillobj files\nmade by an inexperienced blender user (ㅅ´ ˘ `)' }],
     ['meta', { property: 'og:image', content: `${SITE}/banner.png` }],
-    ['meta', { property: 'og:image:width', content: '1200' }],
-    ['meta', { property: 'og:image:height', content: '630' }],
 
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:title', content: 'Genshin SkillObj' }],
