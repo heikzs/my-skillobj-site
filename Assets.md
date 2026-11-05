@@ -37,7 +37,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## <img src="/Lohen_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" />  Lohen
 * [Knife](https://files.catbox.moe/ocx3ig.zip)
-* BookShow
+* [BookShow](https://files.catbox.moe/6smj9a.zip)
 * [BubbleGum](https://files.catbox.moe/cytlrz.zip) - raw
 * [Bottle](https://files.catbox.moe/pl49fu.zip)
 
@@ -72,7 +72,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * [RuneWeapon (Khukuri)](https://files.catbox.moe/76121v.zip)
 
 ## Kaveh
-* 
+* Chest
 
 ## Aloy
 * IceGrenade
@@ -144,8 +144,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * IceBall
 
 ## Gorou 
-* Diaoyu
-* Shirou
+* [Diaoyu](https://files.catbox.moe/qdp4vf.zip)
+* [Shirou](https://files.catbox.moe/n8yobb.zip)
 
 ## Hu Tao 
 * WhiteGhost
@@ -175,8 +175,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * Whole
 
 ## Layla 
-* Paper
-* Pen
+* [Paper](https://files.catbox.moe/clr02m.zip)
+* [Pen](https://files.catbox.moe/swyi0d.zip)
 * ElementalBurst
 
 ## Lisa 
@@ -184,9 +184,9 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * Xingqiubook
 
 ## Mika 
-* Bag
+* [Bag_Book](https://files.catbox.moe/p556gr.zip)
 * Pen
-* Crossbow
+* [Crossbow](https://files.catbox.moe/6pvwpb.zip)
 
 ## Mona 
 * Astrobe
@@ -229,7 +229,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * KasaRing
 
 ## Xiangling
-* Guoba
+* [Guoba](https://files.catbox.moe/kzb5no.zip)
 
 ## Yae Miko
 * Gohei
@@ -263,14 +263,23 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Mitya
 
 ## Alyosha
+* [Gun](https://files.catbox.moe/0z28e0.zip)
+* [SledDog](https://files.catbox.moe/cix325.zip)
+* DogDisc
+* [HotDog](https://files.catbox.moe/0k01nu.zip)
 
 ## Vodyanitsa
+* [FlyingFish](https://files.catbox.moe/0n2qgn.zip)
+* [Mic](https://files.catbox.moe/5665ro.zip)
+* [Mirror](https://files.catbox.moe/gf1z9q.zip)
 
 ## Danica
 
 ## Valeriy
 
 ## Odette
+* [Partner](https://files.catbox.moe/b2lm1o.zip)
+* [Salad](https://files.catbox.moe/fllum3.zip)
 
 ## Noy
 
@@ -285,9 +294,14 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Citlali
 
 ## Mavuika
+* MotorCycle
+* Glasses
 
 ## Iansan
 
 ## Ifa
 
 ## Varesa
+
+## Venti
+* [Lyre](https://files.catbox.moe/w0r9fm.zip)
