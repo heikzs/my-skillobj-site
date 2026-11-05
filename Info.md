@@ -5,9 +5,9 @@ outline: deep
 # ⊹ 𖦹 Info
 
 ---
-All assets ripped using [AnimeStudio](https://github.com/Escartem/AnimeStudio) with the [Festivity Shader](https://github.com/festivities/Blender-miHoYo-Shaders) applied ! 
+All assets ripped using [AnimeStudio](https://github.com/Escartem/AnimeStudio) with [Festivity Shader](https://github.com/festivities/Blender-miHoYo-Shaders) applied ! 
 
-*Except for like 20% of the files which is from [Zeroruka](https://github.com/zeroruka/GI-Assets/tree/main/SkillObj/Characters)... but the other 80% is all MEEE! <span style="color: #eea5a5;">(˶˃𐃷 ˂˶)</span>*
+*Except for like 20% of it which is from [Zeroruka](https://github.com/zeroruka/GI-Assets/tree/main/SkillObj/Characters)... but the other 80% is all MEEE! <span style="color: #eea5a5;">(˶˃𐃷 ˂˶)</span>*
 
 > Alsoo a little disclaimer: I mostly just mess around with nodes and stuff until i get things working sooo i honestly don't know if *this or that* is actually how things are supposed to work lmao. I'm still pretty inexperienced with nodes, and i sometimes use AI to help me figure out the harder parts since i don't always have the time to troubleshoot everything myself. I still try my best to understand things and make the assets easier for everyone to use though!! Hope u don't mind <span style="color: #eea5a5;">(,,>﹏<,,)</span>*
 
