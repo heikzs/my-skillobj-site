@@ -29,7 +29,7 @@ it's messy (ㅅ´ ˘ `)
 ## <span style="color: #eea5a5;">⢏⢢⣀⡔⡹ *</span>
 Don't find the one you're looking for? probably im still working on it! check out [this page](/req.md)
 
-## <img src="/Shikanoin Heizou_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou
+## <img src="/Shikanoin Heizou_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou <span style="color: #eea5a5;">♡</span>
 * 
 
 ## <img src="/Kaedehara Kazuha_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kaedehara Kazuha
@@ -87,19 +87,19 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Candace 
 * [MagicShield](https://files.catbox.moe/reegwp.zip)
 
-## Chongyun 
+## <img src="/Chongyun_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Chongyun 
 * [IceCharm](https://files.catbox.moe/0mmm7e.zip)
 
-## Xingqiu 
+## <img src="/Xingqiu_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Xingqiu 
 * 
 
 ## Call-ay? 
 * [MadCat](https://files.catbox.moe/uw9qh9.zip)
 
-## Cy-no 
+## <img src="/Cyno_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Cy-no 
 * [Clawh](https://files.catbox.moe/fvlq6.zip)
 
-## Thigh-nari 
+## <img src="/Tighnari_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Thigh-nari 
 * [ShowFlower](https://files.catbox.moe/5p3daw.zip)
 * [Arrow](https://files.catbox.moe/sbiebp.zip)
 
@@ -260,9 +260,12 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * Wing
 * [Uchiwa](https://files.catbox.moe/vegekl.zip)
 
-## Mitya
+## <img src="/Mitya_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Mitya
+* [Notebook](https://files.catbox.moe/v5jr6q.zip)
+* [Partner01](https://files.catbox.moe/yqn15o.zip)
+* [Partner02](https://files.catbox.moe/e3xra2.zip)
 
-## Alyosha
+## <img src="/Alyosha_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Alyosha
 * [Gun](https://files.catbox.moe/0z28e0.zip)
 * [SledDog](https://files.catbox.moe/cix325.zip)
 * DogDisc
@@ -276,6 +279,12 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Danica
 
 ## Valeriy
+* [Book](https://files.catbox.moe/29fyo5.zip)
+* [Drone + Clipboard](https://files.catbox.moe/uw4j47.zip)
+* [Paper](https://files.catbox.moe/0n2nr8.zip)
+* [Shield](https://files.catbox.moe/xvvkd3.zip)
+* Pen
+* [PocketWatch](https://files.catbox.moe/e0t5l2.zip)
 
 ## Odette
 * [Partner](https://files.catbox.moe/b2lm1o.zip)
