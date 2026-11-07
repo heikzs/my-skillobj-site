@@ -130,7 +130,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * 
 
 ## Neuvillette
-* <ModelViewer name="Stick" src="/skillobj/.zip" glb="/models/SkillObj_Neuvillette_Stick_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Stick" src="/skillobj/SkillObj_Neuvillette_Stick_Model.zip" glb="/models/SkillObj_Neuvillette_Stick_Model.glb" unlit :brightness="1.4" />
 
 ## Furina 
 * 
