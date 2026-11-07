@@ -30,7 +30,7 @@ it's messy (ㅅ´ ˘ `)
 Don't find the one you're looking for? probably im still working on it! check out [this page](/req.md)
 
 ## <img src="/Shikanoin Heizou_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou <span style="color: #eea5a5;">♡</span>
-* 
+* <ModelViewer name="Jitte" src="/skillobj/SkillObj_Heizo_Jitte.zip" glb="/models/SkillObj_Heizo_Jitte.glb" unlit :brightness="1.4" />
 
 ## <img src="/Kaedehara Kazuha_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kaedehara Kazuha
 * <ModelViewer name="Leaf" src="/skillobj/SkillObj_Perform_Kazuha_Leaf.zip" glb="/models/SkillObj_Perform_Kazuha_Leaf_Model.glb" unlit :brightness="1.4" />
@@ -128,6 +128,9 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## Arlecchino 
 * 
+
+## Neuvillette
+* <ModelViewer name="Stick" src="/skillobj/.zip" glb="/models/SkillObj_Neuvillette_Stick_Model.glb" unlit :brightness="1.4" />
 
 ## Furina 
 * 
