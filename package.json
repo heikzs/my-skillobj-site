@@ -5,6 +5,8 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
+    "jszip": "^3.10.2",
+    "three": "^0.187.0",
     "vitepress": "^1.6.4"
   }
 }

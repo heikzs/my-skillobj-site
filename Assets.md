@@ -29,22 +29,22 @@ it's messy (ㅅ´ ˘ `)
 ## <span style="color: #eea5a5;">⢏⢢⣀⡔⡹ *</span>
 Don't find the one you're looking for? probably im still working on it! check out [this page](/req.md)
 
-## <img src="/Shikanoin Heizou_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou <span style="color: #eea5a5;">♡</span>
+## <img src="/Shikanoin Heizou_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou <span style="color: #eea5a5;">♡</span>
 * 
 
-## <img src="/Kaedehara Kazuha_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kaedehara Kazuha
-* [Leaf](https://files.catbox.moe/rvztba.zip)
+## <img src="/Kaedehara Kazuha_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kaedehara Kazuha
+* <ModelViewer name="Leaf" src="/skillobj/SkillObj_Perform_Kazuha_Leaf.zip" glb="/models/SkillObj_Perform_Kazuha_Leaf_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Lohen_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" />  Lohen
-* [Knife](https://files.catbox.moe/ocx3ig.zip)
-* [BookShow](https://files.catbox.moe/6smj9a.zip)
-* [BubbleGum](https://files.catbox.moe/cytlrz.zip) - raw
-* [Bottle](https://files.catbox.moe/pl49fu.zip)
+* <ModelViewer name="Knife" src="/skillobj/SkillObj_Lohen_Knife_Model.zip" glb="/models/SkillObj_Lohen_Knife_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="BookShow" src="/skillobj/SkillObj_Lohen_Book_Show01_Model.zip" glb="/models/SkillObj_Lohen_Book_Show01_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="BubbleGum" src="/skillobj/Eff_Avatar_Boy_Pole_Lohen_Show01_BubbleGum.zip"" unlit :brightness="1.4" /> - raw
+* <ModelViewer name="Bottle" src="/skillobj/SkillObj_Lohen_Bottle_Model.zip" glb="/models/SkillObj_Lohen_Bottle_Model.glb" unlit :brightness="1.4" />
 
-## <img src="/Kinich_Icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kinich
-* [HandCannon](https://files.catbox.moe/a9b80m.zip)
-* [Ajaw](https://files.catbox.moe/165r89.zip)
-* [BigAjaw](https://files.catbox.moe/omdojb.zip) - raw
+## <img src="/Kinich_Icon.png" width="30" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kinich
+* <ModelViewer name="HandCannon" src="/skillobj/SkillObj_Kinich_HandCannon_Model.zip" glb="/models/SkillObj_Kinich_HandCannon_Model.glb"  unlit :brightness="1.4" />
+* <ModelViewer name="Ajaw" src="/skillobj/SkillObj_Kinich_Ajaw_Model.zip" :modes="[{label:'1',glb:'/models/SkillObj_Kinich_Ajaw_Model1.glb'},{label:'2',glb:'/models/SkillObj_Kinich_Ajaw_Model2.glb'},{label:'3',glb:'/models/SkillObj_Kinich_Ajaw_Model3.glb'}]" unlit :brightness="1.4" />
+* <ModelViewer name="Big_Ajaw" src="/skillobj/SkillObj_Kinich_Big_Ajaw_01_Model.zip.zip"" unlit :brightness="1.4" /> - raw
 
 ## Mualani 
 * 
@@ -52,24 +52,24 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Kachina 
 * 
 
-## <img src="/Kirara_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kirara
-* [DeliveryBox + Glasses](https://files.catbox.moe/xg2z6p.zip)
+## <img src="/Kirara_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kirara
+* <ModelViewer name="DeliveryBox + Glasses" src="/skillobj/SkillObj_Momoka_DeliveryBox_Model.zip" glb="/models/SkillObj_Momoka_DeliveryBox_Model1.glb" glb2="/models/SkillObj_Momoka_DeliveryBox_Model2.glb" label="1" label2="2" unlit :brightness="1.4" />
 
-## <img src="/Vesna_Icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Vesna
-* [MagicSword_Small](https://files.catbox.moe/2j09j1.zip)
-* [MagicSword_Small_Muti](https://files.catbox.moe/wiyqii.zip)
-* [PlateAndFood](https://files.catbox.moe/3zyxdr.zip)
-* [Scepter](https://files.catbox.moe/dj28da.zip)
+## <img src="/Vesna_Icon.png" width="30" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Vesna
+* <ModelViewer name="MagicSword_Small" src="/skillobj/SkillObj_Vesna_MagicSword_Small.zip" glb="/models/SkillObj_Vesna_MagicSword_Small1.glb" glb2="/models/SkillObj_Vesna_MagicSword_Small2.glb" label="1" label2="2" unlit :brightness="1.4" />
+* <ModelViewer name="MagicSword_Small_Muti" src="/skillobj/SkillObj_Vesna_MagicSword_Small_Muti_Model.zip" glb="/models/SkillObj_Vesna_MagicSword_Small_Muti_Model1.glb" glb2="/models/SkillObj_Vesna_MagicSword_Small_Muti_Model2.glb" label="1" label2="2" unlit :brightness="1.4" />
+* <ModelViewer name="PlateAndFood" src="/skillobj/SkillObj_Vesna_PlateAndFood_Model.zip" glb="/models/SkillObj_Vesna_PlateAndFood_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Scepter" src="/skillobj/SkillObj_Vesna_Scepter_Model.zip" glb="/models/SkillObj_Vesna_Scepter_Model.glb" unlit :brightness="1.4" />
 
-## <img src="/Albedo_Icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Albedo
-* [Opus](https://files.catbox.moe/59lkft.zip)
-* [Gravestone](https://files.catbox.moe/dlhayu.zip) - raw
-* [Magnum](https://files.catbox.moe/vtyxfr.zip)
-* Canvas
+## <img src="/Albedo_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Albedo
+* <ModelViewer name="Opus" src="/skillobj/SkillObj_Albedo_Opus_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Gravestone" src="/skillobj/SkillObj_Albedo_Gravestone_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Magnum" src="/skillobj/SkillObj_Albedo_Magnum_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Canvas" src="/skillobj/.zip"" unlit :brightness="1.4" />
 
-## Al-Haitham
-* [ShowKey](https://files.catbox.moe/dfm8c4.zip)
-* [RuneWeapon (Khukuri)](https://files.catbox.moe/76121v.zip)
+## <img src="/Alhaitham_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Al-Haitham
+* <ModelViewer name="ShowKey" src="/skillobj/SkillObj_Alhatham_Show_Key_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="RuneWeapon (Khukuri)" src="/skillobj/SkillObj_Alhatham_Khukuri_Model.zip"" unlit :brightness="1.4" />
 
 ## Kaveh
 * Chest
@@ -78,47 +78,47 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * IceGrenade
 
 ## Arataki Itto
-* [Comb](https://files.catbox.moe/g8t6zq.zip)
-* [OniBull](https://files.catbox.moe/4zybvn.zip)
+* <ModelViewer name="Comb" src="/skillobj/SkillObj_Itto_Comb_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="OniBull" src="/skillobj/SkillObj_Itto_Onibull_Model.zip"" unlit :brightness="1.4" />
 
 ## Beidou
-* [Thundershield (Beisht)](https://files.catbox.moe/95rzze.zip)
+* <ModelViewer name="ThunderShield (Beisht)" src="/skillobj/SkillObj_Beidou_ThunderShield_Beisht_Model.zip"" unlit :brightness="1.4" />
 
 ## Candace 
-* [MagicShield](https://files.catbox.moe/reegwp.zip)
+* <ModelViewer name="MagicShield" src="/skillobj/SkillObj_Candace_MagicShield_Model.zip"" unlit :brightness="1.4" />
 
-## <img src="/Chongyun_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Chongyun 
-* [IceCharm](https://files.catbox.moe/0mmm7e.zip)
+## <img src="/Chongyun_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Chongyun 
+* <ModelViewer name="IceCharm" src="/skillobj/SkillObj_IceCharm_Model.zip"" unlit :brightness="1.4" />
 
-## <img src="/Xingqiu_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Xingqiu 
+## <img src="/Xingqiu_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Xingqiu 
 * 
 
-## Call-ay? 
-* [MadCat](https://files.catbox.moe/uw9qh9.zip)
+## <img src="/Collei_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Call-ay? 
+* <ModelViewer name="MadCat" src="/skillobj/SkillObj_Collei_MadCat_Model.zip"" unlit :brightness="1.4" />
 
-## <img src="/Cyno_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Cy-no 
-* [Clawh](https://files.catbox.moe/fvlq6.zip)
+## <img src="/Cyno_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Cy-no 
+* <ModelViewer name="Clawh" src="/skillobj/SkillObj_Cyno_Claw_Model.zip"" unlit :brightness="1.4" />
 
-## <img src="/Tighnari_icon.png" width="40" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Thigh-nari 
-* [ShowFlower](https://files.catbox.moe/5p3daw.zip)
-* [Arrow](https://files.catbox.moe/sbiebp.zip)
+## <img src="/Tighnari_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Thigh-nari 
+* <ModelViewer name="ShowFlower" src="/skillobj/SkillObj_Tighnari_ShowFlower_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Arrow" src="/skillobj/SkillObj_Tighnari_Arrow_Model.zip"" unlit :brightness="1.4" />
 
-## Dehya 
-* [Makeup](https://files.catbox.moe/pfw9zz.zip)
+## <img src="/Dehya_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Dehya 
+* <ModelViewer name="Makeup" src="/skillobj/SkillObj_Dehya_Makeup_Model.zip" unlit :brightness="1.4" />
 
 ## Diluc 
-* [Falcon](https://files.catbox.moe/zrodfy.zip)
-* [Flamme_Scroll](https://files.catbox.moe/dqabn6.zip)
+* <ModelViewer name="Falcon" src="/skillobj/FalconSkillObj_DilucFalcon_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Flamme_Scroll" src="/skillobj/SkillObj_DilucCostumeFlamme_Scroll_Model.zip"" unlit :brightness="1.4" />
 
 ## Dori
-* [Sprite](https://files.catbox.moe/vegekl.zip)
-* [Lantern](https://files.catbox.moe/hh1yny.zip)
+* <ModelViewer name="Sprite" src="/skillobj/SkillObj_Dori_Sprite_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Lantern" src="/skillobj/SkillObj_Dori_Lantern_Model.zip"" unlit :brightness="1.4" />
 
 ## Fischl 
-* [FischlCrow](https://files.catbox.moe/0na3kd.zip)
+* <ModelViewer name="Crow" src="/skillobj/SkillObj_Fischl_Crow_model.zip"" unlit :brightness="1.4" />
 
-## Freminet 
-* [Penguin](https://files.catbox.moe/j42gfu.zip)
+## <img src="/Freminet_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Freminet 
+* <ModelViewer name="Penguin" src="/skillobj/.zip" glb="/models/SkillObj_Freminet_Penguin_Model.glb" unlit :brightness="1.4" />
 
 ## Lyney 
 * 
@@ -133,7 +133,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * 
 
 ## Gaming 
-* [LionPet](https://files.catbox.moe/c3g426.zip)
+* <ModelViewer name="LionPet" src="/skillobj/SkillObj_Gaming_LionPet_Model.zip"" unlit :brightness="1.4" />
 * LionHead
 
 ## Lanyan 
@@ -144,8 +144,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * IceBall
 
 ## Gorou 
-* [Diaoyu](https://files.catbox.moe/qdp4vf.zip)
-* [Shirou](https://files.catbox.moe/n8yobb.zip)
+* <ModelViewer name="Diaoyu" src="/skillobj/Gorou DiaoYu.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Shirou" src="/skillobj/Gorou Shirou.zip"" unlit :brightness="1.4" />
 
 ## Hu Tao 
 * WhiteGhost
@@ -154,7 +154,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * ElementalBurstArmor
 
 ## Kamisato Ayato 
-* [BubbleTea](https://files.catbox.moe/bl1dc4.zip)
+* <ModelViewer name="BubbleTea" src="/skillobj/SkillObj_Ayato_BubbleTea_Model.zip"" unlit :brightness="1.4" />
 * AyatoShadow
 
 ## Kamisato Ayaka 
@@ -175,8 +175,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * Whole
 
 ## Layla 
-* [Paper](https://files.catbox.moe/clr02m.zip)
-* [Pen](https://files.catbox.moe/swyi0d.zip)
+* <ModelViewer name="Paper" src="/skillobj/Layla Show02 Paper.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Pen" src="/skillobj/SkillObj_Layla_Show02_Pen_Model.zip"" unlit :brightness="1.4" />
 * ElementalBurst
 
 ## Lisa 
@@ -184,9 +184,9 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * Xingqiubook
 
 ## Mika 
-* [Bag_Book](https://files.catbox.moe/p556gr.zip)
+* <ModelViewer name="Bag_Book" src="/skillobj/SkillObj_Mika_Bag_Book_Model.zip" glb="/models/SkillObj_Lohen_Book_Show01_Model.glb" unlit :brightness="1.4" />
 * Pen
-* [Crossbow](https://files.catbox.moe/6pvwpb.zip)
+* <ModelViewer name="Crossbow" src="/skillobj/.zip"" unlit :brightness="1.4" />
 
 ## Mona 
 * Astrobe
@@ -229,7 +229,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * KasaRing
 
 ## Xiangling
-* [Guoba](https://files.catbox.moe/kzb5no.zip)
+* <ModelViewer name="Guoba" src="/skillobj/SkillObj_Panda_Model.zip"" unlit :brightness="1.4" />
 
 ## Yae Miko
 * Gohei
@@ -258,37 +258,36 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## Kujou Sara
 * Wing
-* [Uchiwa](https://files.catbox.moe/vegekl.zip)
+* <ModelViewer name="Uchiwa" src="/skillobj/SkillObj_Sara_Uchiwa.zip"" unlit :brightness="1.4" />
 
 ## <img src="/Mitya_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Mitya
-* [Notebook](https://files.catbox.moe/v5jr6q.zip)
-* [Partner01](https://files.catbox.moe/yqn15o.zip)
-* [Partner02](https://files.catbox.moe/e3xra2.zip)
+* <ModelViewer name="Notebook" src="/skillobj/.zip" glb="/models/SkillObj_Mitya_Notebook_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Partner01" src="/skillobj/.zip" glb="/models/SkillObj_Mitya_Partner01_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Partner02" src="/skillobj/SkillObj_Mitya_Partner02_Model.zip"" unlit :brightness="1.4" />
 
 ## <img src="/Alyosha_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Alyosha
-* [Gun](https://files.catbox.moe/0z28e0.zip)
-* [SledDog](https://files.catbox.moe/cix325.zip)
+* <ModelViewer name="Gun" src="/skillobj/SkillObj_Alyosha_Gun_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="SledDog" src="/skillobj/SkillObj_Alyosha_SledDog_Model.zip"" unlit :brightness="1.4" />
 * DogDisc
-* [HotDog](https://files.catbox.moe/0k01nu.zip)
+* <ModelViewer name="HotDog" src="/skillobj/SkillObj_Alyosha_HotDog_Model.zip"" unlit :brightness="1.4" />
 
 ## Vodyanitsa
-* [FlyingFish](https://files.catbox.moe/0n2qgn.zip)
-* [Mic](https://files.catbox.moe/5665ro.zip)
-* [Mirror](https://files.catbox.moe/gf1z9q.zip)
+* <ModelViewer name="FlyingFish" src="/skillobj/SkillObj_Vodyanitsa_FlyingFish_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Mic" src="/skillobj/SkillObj_Vodyanitsa_Mic_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Mirror" src="/skillobj/SkillObj_Vodyanitsa_Mirror_Model.zip"" unlit :brightness="1.4" />
 
 ## Danica
 
 ## Valeriy
-* [Book](https://files.catbox.moe/29fyo5.zip)
-* [Drone + Clipboard](https://files.catbox.moe/uw4j47.zip)
-* [Paper](https://files.catbox.moe/0n2nr8.zip)
-* [Shield](https://files.catbox.moe/xvvkd3.zip)
-* Pen
-* [PocketWatch](https://files.catbox.moe/e0t5l2.zip)
+* <ModelViewer name="Book" src="/skillobj/SkillObj_Valeriy_Book_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Drone + Clipboard" src="/skillobj/SkillObj_Valeriy_Drone_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Paper" src="/skillobj/SkillObj_Valeriy_Paper_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Shield" src="/skillobj/SkillObj_Valeriy_Shield.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="PocketWatch" src="/skillobj/SkillObj_Valeriy_PocketWatch_Model.zip"" unlit :brightness="1.4" />
 
 ## Odette
-* [Partner](https://files.catbox.moe/b2lm1o.zip)
-* [Salad](https://files.catbox.moe/fllum3.zip)
+* <ModelViewer name="Partner" src="/skillobj/SkillObj_Odette_Partner_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Salad" src="/skillobj/SkillObj_Odette_Salad_Model.zip"" unlit :brightness="1.4" />
 
 ## Noy
 
@@ -313,4 +312,4 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Varesa
 
 ## Venti
-* [Lyre](https://files.catbox.moe/w0r9fm.zip)
+* <ModelViewer name="Lyre" src="/skillobj/Cs_Item_SkillObj_Lyre_Model.zip"" unlit :brightness="1.4" />

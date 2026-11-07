@@ -1,7 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import AudioPlayer from './AudioPlayer.vue'
-import './custom.css' 
+import ModelViewer from './ModelViewer.vue'
+import './custom.css'
 
 const myPlaylist = [
   { src: '/Storm Chaser.mp3', title: 'Storm Chaser' },
@@ -15,5 +16,8 @@ export default {
       'nav-bar-content-after': () => h(AudioPlayer, { playlist: myPlaylist }),
       'sidebar-nav-before': () => h(AudioPlayer, { playlist: myPlaylist })
     })
+  },
+  enhanceApp({ app }) {
+    app.component('ModelViewer', ModelViewer)
   }
 }
