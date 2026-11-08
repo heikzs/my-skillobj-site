@@ -24,7 +24,6 @@ it's messy (ㅅ´ ˘ `)
 :::
 
 # ⭑.ᐟ Assets
-> **Heads up:** Skill effects (eg., kazuha's skill/burst) aren't included !
 
 ## <span style="color: #eea5a5;">⢏⢢⣀⡔⡹ *</span>
 Don't find the one you're looking for? probably im still working on it! check out [this page](/req.md)
@@ -46,12 +45,6 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="Ajaw" src="/skillobj/SkillObj_Kinich_Ajaw_Model.zip" :modes="[{label:'1',glb:'/models/SkillObj_Kinich_Ajaw_Model1.glb'},{label:'2',glb:'/models/SkillObj_Kinich_Ajaw_Model2.glb'},{label:'3',glb:'/models/SkillObj_Kinich_Ajaw_Model3.glb'}]" unlit :brightness="1.4" />
 * <ModelViewer name="Big_Ajaw" src="/skillobj/SkillObj_Kinich_Big_Ajaw_01_Model.zip.zip"" unlit :brightness="1.4" /> - raw
 
-## Mualani 
-* 
-
-## Kachina 
-* 
-
 ## <img src="/Kirara_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kirara
 * <ModelViewer name="DeliveryBox + Glasses" src="/skillobj/SkillObj_Momoka_DeliveryBox_Model.zip" glb="/models/SkillObj_Momoka_DeliveryBox_Model1.glb" glb2="/models/SkillObj_Momoka_DeliveryBox_Model2.glb" label="1" label2="2" unlit :brightness="1.4" />
 
@@ -62,14 +55,14 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="Scepter" src="/skillobj/SkillObj_Vesna_Scepter_Model.zip" glb="/models/SkillObj_Vesna_Scepter_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Albedo_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Albedo
-* <ModelViewer name="Opus" src="/skillobj/SkillObj_Albedo_Opus_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Gravestone" src="/skillobj/SkillObj_Albedo_Gravestone_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Magnum" src="/skillobj/SkillObj_Albedo_Magnum_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Canvas" src="/skillobj/.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Opus" src="/skillobj/SkillObj_Albedo_Opus_Model.zip" glb="/models/SkillObj_Albedo_Opus_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Gravestone" src="/skillobj/SkillObj_Albedo_Gravestone_Model.zip" unlit :brightness="1.4" /> - raw
+* <ModelViewer name="Magnum" src="/skillobj/SkillObj_Albedo_Magnum_Model.zip" glb="/models/SkillObj_Albedo_Magnum_Model.glb" unlit :brightness="1.4" />
+* Canvas
 
 ## <img src="/Alhaitham_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Al-Haitham
-* <ModelViewer name="ShowKey" src="/skillobj/SkillObj_Alhatham_Show_Key_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="RuneWeapon (Khukuri)" src="/skillobj/SkillObj_Alhatham_Khukuri_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="ShowKey" src="/skillobj/SkillObj_Alhatham_Show_Key_Model.zip" glb="/models/SkillObj_Alhatham_Show_Key_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="RuneWeapon (Khukuri)" src="/skillobj/SkillObj_Alhatham_Khukuri_Model.zip" glb="/models/SkillObj_Alhatham_Khukuri_Model.glb" unlit :brightness="1.4" />
 
 ## Kaveh
 * Chest
@@ -78,23 +71,23 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * IceGrenade
 
 ## Arataki Itto
-* <ModelViewer name="Comb" src="/skillobj/SkillObj_Itto_Comb_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="OniBull" src="/skillobj/SkillObj_Itto_Onibull_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Comb" src="/skillobj/SkillObj_Itto_Comb_Model.zip" glb="/models/SkillObj_Itto_Comb_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="OniBull" src="/skillobj/SkillObj_Itto_Onibull_Model.zip" glb="/models/SkillObj_Itto_Onibull_Model.glb" unlit :brightness="1.4" />
 
 ## Beidou
-* <ModelViewer name="ThunderShield (Beisht)" src="/skillobj/SkillObj_Beidou_ThunderShield_Beisht_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="ThunderShield (Beisht)" src="/skillobj/SkillObj_Beidou_ThunderShield_Beisht_Model.zip" glb="/models/SkillObj_Beidou_ThunderShield_Model.glb" unlit :brightness="1.4" />
 
 ## Candace 
-* <ModelViewer name="MagicShield" src="/skillobj/SkillObj_Candace_MagicShield_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="MagicShield" src="/skillobj/SkillObj_Candace_MagicShield_Model.zip" glb="/models/SkillObj_Candace_MagicShield_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Chongyun_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Chongyun 
-* <ModelViewer name="IceCharm" src="/skillobj/SkillObj_IceCharm_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="IceCharm" src="/skillobj/SkillObj_IceCharm_Model.zip" glb="/models/SkillObj_IceCharm_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Xingqiu_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Xingqiu 
 * 
 
 ## <img src="/Collei_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Call-ay? 
-* <ModelViewer name="MadCat" src="/skillobj/SkillObj_Collei_MadCat_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="MadCat" src="/skillobj/SkillObj_Collei_MadCat_Model.zip" glb="/models/SkillObj_Collei_MadCat_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Cyno_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Cy-no 
 * <ModelViewer name="Clawh" src="/skillobj/SkillObj_Cyno_Claw_Model.zip"" unlit :brightness="1.4" />
@@ -120,27 +113,12 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## <img src="/Freminet_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Freminet 
 * <ModelViewer name="Penguin" src="/skillobj/.zip" glb="/models/SkillObj_Freminet_Penguin_Model.glb" unlit :brightness="1.4" />
 
-## Lyney 
-* 
-
-## Lynette 
-* 
-
-## Arlecchino 
-* 
-
 ## Neuvillette
 * <ModelViewer name="Stick" src="/skillobj/SkillObj_Neuvillette_Stick_Model.zip" glb="/models/SkillObj_Neuvillette_Stick_Model.glb" unlit :brightness="1.4" />
 
-## Furina 
-* 
-
 ## Gaming 
-* <ModelViewer name="LionPet" src="/skillobj/SkillObj_Gaming_LionPet_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="LionPet" src="/skillobj/SkillObj_Gaming_LionPet_Model.zip" glb="/models/SkillObj_Gaming_LionPet_Model.glb" unlit :brightness="1.4" />
 * LionHead
-
-## Lanyan 
-* 
 
 ## Ganyu 
 * IceLotus
@@ -159,9 +137,6 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Kamisato Ayato 
 * <ModelViewer name="BubbleTea" src="/skillobj/SkillObj_Ayato_BubbleTea_Model.zip"" unlit :brightness="1.4" />
 * AyatoShadow
-
-## Kamisato Ayaka 
-* 
 
 ## Keqing
 * Map
@@ -261,25 +236,23 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## Kujou Sara
 * Wing
-* <ModelViewer name="Uchiwa" src="/skillobj/SkillObj_Sara_Uchiwa.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Uchiwa" src="/skillobj/SkillObj_Sara_Uchiwa.zip" glb="/models/SkillObj_Sara_Uchiwa_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Mitya_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Mitya
 * <ModelViewer name="Notebook" src="/skillobj/.zip" glb="/models/SkillObj_Mitya_Notebook_Model.glb" unlit :brightness="1.4" />
 * <ModelViewer name="Partner01" src="/skillobj/.zip" glb="/models/SkillObj_Mitya_Partner01_Model.glb" unlit :brightness="1.4" />
-* <ModelViewer name="Partner02" src="/skillobj/SkillObj_Mitya_Partner02_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Partner02" src="/skillobj/SkillObj_Mitya_Partner02_Model.zip" glb="/models/SkillObj_Mitya_Partner02_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Alyosha_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Alyosha
-* <ModelViewer name="Gun" src="/skillobj/SkillObj_Alyosha_Gun_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="SledDog" src="/skillobj/SkillObj_Alyosha_SledDog_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Gun" src="/skillobj/SkillObj_Alyosha_Gun_Model.zip" glb="/models/SkillObj_Alyosha_Gun_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="SledDog" src="/skillobj/SkillObj_Alyosha_SledDog_Model.zip" glb="/models/SkillObj_Alyosha_SledDog_Model.glb" unlit :brightness="1.4" />
 * DogDisc
-* <ModelViewer name="HotDog" src="/skillobj/SkillObj_Alyosha_HotDog_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="HotDog" src="/skillobj/SkillObj_Alyosha_HotDog_Model.zip" glb="/models/SkillObj_Alyosha_HotDog_Model.glb" unlit :brightness="1.4" />
 
 ## Vodyanitsa
 * <ModelViewer name="FlyingFish" src="/skillobj/SkillObj_Vodyanitsa_FlyingFish_Model.zip"" unlit :brightness="1.4" />
 * <ModelViewer name="Mic" src="/skillobj/SkillObj_Vodyanitsa_Mic_Model.zip"" unlit :brightness="1.4" />
 * <ModelViewer name="Mirror" src="/skillobj/SkillObj_Vodyanitsa_Mirror_Model.zip"" unlit :brightness="1.4" />
-
-## Danica
 
 ## Valeriy
 * <ModelViewer name="Book" src="/skillobj/SkillObj_Valeriy_Book_Model.zip"" unlit :brightness="1.4" />
@@ -292,27 +265,9 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="Partner" src="/skillobj/SkillObj_Odette_Partner_Model.zip"" unlit :brightness="1.4" />
 * <ModelViewer name="Salad" src="/skillobj/SkillObj_Odette_Salad_Model.zip"" unlit :brightness="1.4" />
 
-## Noy
-
-## Anastasya Feodorovna Snezhnaya
-
-## Xilonen
-
-## Chasca
-
-## Ororon
-
-## Citlali
-
 ## Mavuika
 * MotorCycle
 * Glasses
 
-## Iansan
-
-## Ifa
-
-## Varesa
-
 ## Venti
-* <ModelViewer name="Lyre" src="/skillobj/Cs_Item_SkillObj_Lyre_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Lyre" src="/skillobj/Cs_Item_SkillObj_Lyre_Model.zip" glb="/models/Cs_Item_SkillObj_Lyre_Model.glb" unlit :brightness="1.4" />

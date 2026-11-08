@@ -249,7 +249,6 @@ onBeforeUnmount(() => {
             >{{ m.label || 'Mode ' + (i + 1) }}</button>
           </span>
           <span class="mv-actions">
-            <a :href="src" download class="mv-dl">Download</a>
             <button class="mv-close" @click="close">✕</button>
           </span>
         </div>
@@ -258,7 +257,9 @@ onBeforeUnmount(() => {
           <div v-if="loading" class="mv-msg">loading model…</div>
           <div v-if="error" class="mv-msg mv-err">{{ error }}</div>
         </div>
-        <div v-if="!noPreview" class="mv-hint">drag = rotate · scroll = zoom · right-drag = pan</div>
+        <div class="mv-foot">
+          <a :href="src" download class="mv-dl">Download</a>
+        </div>
         <div v-if="!noPreview" class="mv-warn">This is just a preview. The look inside .blend file may be different</div>
       </div>
     </div>
@@ -309,6 +310,7 @@ onBeforeUnmount(() => {
   text-decoration: none;
 }
 .mv-dl:hover { background: #eea5a5; color: #fff; }
+.mv-foot { display: flex; justify-content: center; padding: 10px 0 4px; }
 .mv-close { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--vp-c-text-1); }
 .mv-canvas { position: relative; width: 100%; height: 420px; }
 .mv-msg {

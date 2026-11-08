@@ -8,7 +8,6 @@ Want to see which characters are actively being worked on?
 * Check out the [SkillObj Tracker Spreadsheet](https://docs.google.com/spreadsheets/d/1U9pjaHSF1u60ME3MmcQRSyr1bzTszYJdHvHUZTZiAAM/edit?usp=sharing)!
 :::
 
-Feel free to request idles or bursts too! Skill effects are totally allowed but i'll be leaving them completely raw <span style="color: #eea5a5;">(¬`‸´¬)</span>
 <iframe src="https://tally.so/embed/RWKXjd" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="SkillObj Request Form"></iframe>
 
 <img 
