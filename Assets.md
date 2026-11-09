@@ -90,31 +90,38 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="MadCat" src="/skillobj/SkillObj_Collei_MadCat_Model.zip" glb="/models/SkillObj_Collei_MadCat_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Cyno_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Cy-no 
-* <ModelViewer name="Clawh" src="/skillobj/SkillObj_Cyno_Claw_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Clawh" src="/skillobj/SkillObj_Cyno_Claw_Model.zip" glb="/models/SkillObj_Cyno_Claw_Model1.glb" glb2="/models/SkillObj_Cyno_Claw_Model2.glb" label="1" label2="2" unlit :brightness="1.4" />
+* <ModelViewer name="Jackal" src="/skillobj/SkillObj_Cyno_Jackal.zip" :modes="[{label:'1',glb:'/models/SkillObj_Cyno_Jackal_Model1.glb'},{label:'2',glb:'/models/SkillObj_Cyno_Jackal_Model2.glb'},{label:'3',glb:'/models/SkillObj_Cyno_Jackal_Model3.glb'}]" unlit :brightness="1.4" />
+* <ModelViewer name="PhotographPose_Card" src="/skillobj/SkillObj_Cyno_PhotographPose_Talent.zip" glb="/models/SkillObj_Cyno_PhotographPose_Card_Talent_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Tighnari_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Thigh-nari 
-* <ModelViewer name="ShowFlower" src="/skillobj/SkillObj_Tighnari_ShowFlower_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Arrow" src="/skillobj/SkillObj_Tighnari_Arrow_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="ShowFlower" src="/skillobj/SkillObj_Tighnari_ShowFlower_Model.zip" glb="/models/SkillObj_Tighnari_ShowFlower_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Arrow" src="/skillobj/SkillObj_Tighnari_Arrow_Model.zip" glb="/models/SkillObj_Tighnari_Arrow_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Dehya_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Dehya 
-* <ModelViewer name="Makeup" src="/skillobj/SkillObj_Dehya_Makeup_Model.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Makeup" src="/skillobj/SkillObj_Dehya_Makeup_Model.zip" glb="/models/SkillObj_Dehya_Makeup_Model.glb" unlit :brightness="1.4" />
 
-## Diluc 
-* <ModelViewer name="Falcon" src="/skillobj/FalconSkillObj_DilucFalcon_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Flamme_Scroll" src="/skillobj/SkillObj_DilucCostumeFlamme_Scroll_Model.zip"" unlit :brightness="1.4" />
+## <img src="/Diluc_icon.png" width="50" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Diluc 
+* <ModelViewer name="Falcon" src="/skillobj/FalconSkillObj_DilucFalcon_Model.zip" glb="/models/SkillObj_DilucFalcon_Model.glb" glb2="/models/SkillObj_DilucFalcon_Model2.glb" label="1" label2="2" unlit :brightness="1.4" />
+* <ModelViewer name="Flamme_Scroll" src="/skillobj/SkillObj_DilucCostumeFlamme_Scroll_Model.zip" glb="/models/SkillObj_DilucCostumeFlamme_Scroll_Model.glb" unlit :brightness="1.4" />
 
 ## Dori
-* <ModelViewer name="Sprite" src="/skillobj/SkillObj_Dori_Sprite_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Lantern" src="/skillobj/SkillObj_Dori_Lantern_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Sprite" src="/skillobj/SkillObj_Dori_Sprite_Model.zip" glb="/models/SkillObj_Dori_Sprite_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Lantern" src="/skillobj/SkillObj_Dori_Lantern_Model.zip" glb="/models/SkillObj_Dori_Lantern_Model.glb" unlit :brightness="1.4" />
 
 ## Fischl 
-* <ModelViewer name="Crow" src="/skillobj/SkillObj_Fischl_Crow_model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Crow" src="/skillobj/SkillObj_Fischl_Crow_model.zip" glb="/models/SkillObj_Fischl_Crow_model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Freminet_icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Freminet 
 * <ModelViewer name="Penguin" src="/skillobj/.zip" glb="/models/SkillObj_Freminet_Penguin_Model.glb" unlit :brightness="1.4" />
 
 ## Neuvillette
 * <ModelViewer name="Stick" src="/skillobj/SkillObj_Neuvillette_Stick_Model.zip" glb="/models/SkillObj_Neuvillette_Stick_Model.glb" unlit :brightness="1.4" />
+
+## Clorinde
+* <ModelViewer name="Shotgun" src="/skillobj/SkillObj_Clorinde_Shotgun_Model.zip" glb="/models/SkillObj_Clorinde_Shotgun_Model.glb" unlit :brightness="1.4" />
+
+* <ModelViewer name="Shadow" src="/skillobj/SkillObj_Clorinde_Shadow.zip" :modes="[{label:'1',glb:'/models/SkillObj_Clorinde_Shadow1.glb'},{label:'2',glb:'/models/SkillObj_Clorinde_Shadow2.glb'},{label:'3',glb:'/models/SkillObj_Clorinde_Shadow3.glb'},{label:'4',glb:'/models/SkillObj_Clorinde_Shadow4.glb'}]" unlit :brightness="1.4" />
 
 ## Gaming 
 * <ModelViewer name="LionPet" src="/skillobj/SkillObj_Gaming_LionPet_Model.zip" glb="/models/SkillObj_Gaming_LionPet_Model.glb" unlit :brightness="1.4" />
@@ -125,8 +132,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * IceBall
 
 ## Gorou 
-* <ModelViewer name="Diaoyu" src="/skillobj/Gorou DiaoYu.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Shirou" src="/skillobj/Gorou Shirou.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Diaoyu" src="/skillobj/Gorou DiaoYu.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Shirou" src="/skillobj/Gorou Shirou.zip" glb="/models/SkillObj_Gorou_Shirou_Model.glb" unlit :brightness="1.4" />
 
 ## Hu Tao 
 * WhiteGhost
@@ -262,8 +269,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="PocketWatch" src="/skillobj/SkillObj_Valeriy_PocketWatch_Model.zip"" unlit :brightness="1.4" />
 
 ## Odette
-* <ModelViewer name="Partner" src="/skillobj/SkillObj_Odette_Partner_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Salad" src="/skillobj/SkillObj_Odette_Salad_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Partner" src="/skillobj/SkillObj_Odette_Partner_Model.zip" glb="/models/SkillObj_Odette_Partner_Model.glb"  unlit :brightness="1.4" />
+* <ModelViewer name="Salad" src="/skillobj/SkillObj_Odette_Salad_Model.zip" unlit :brightness="1.4" />
 
 ## Mavuika
 * MotorCycle
