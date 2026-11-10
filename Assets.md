@@ -28,10 +28,10 @@ it's messy (ㅅ´ ˘ `)
 ## <span style="color: #eea5a5;">⢏⢢⣀⡔⡹ *</span>
 Don't find the one you're looking for? probably im still working on it! check out [this page](/req.md)
 
-## <img src="/Shikanoin Heizou_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou <span style="color: #eea5a5;">♡</span>
+## <img src="/Shikanoin Heizou_Icon.png" width="50" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Shikanoin Heizou <span style="color: #eea5a5;">♡</span>
 * <ModelViewer name="Jitte" src="/skillobj/SkillObj_Heizo_Jitte.zip" glb="/models/SkillObj_Heizo_Jitte.glb" unlit :brightness="1.4" />
 
-## <img src="/Kaedehara Kazuha_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kaedehara Kazuha
+## <img src="/Kaedehara Kazuha_Icon.png" width="50" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kaedehara Kazuha
 * <ModelViewer name="Leaf" src="/skillobj/SkillObj_Perform_Kazuha_Leaf.zip" glb="/models/SkillObj_Perform_Kazuha_Leaf_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Lohen_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" />  Lohen
@@ -44,6 +44,15 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="HandCannon" src="/skillobj/SkillObj_Kinich_HandCannon_Model.zip" glb="/models/SkillObj_Kinich_HandCannon_Model.glb"  unlit :brightness="1.4" />
 * <ModelViewer name="Ajaw" src="/skillobj/SkillObj_Kinich_Ajaw_Model.zip" :modes="[{label:'1',glb:'/models/SkillObj_Kinich_Ajaw_Model1.glb'},{label:'2',glb:'/models/SkillObj_Kinich_Ajaw_Model2.glb'},{label:'3',glb:'/models/SkillObj_Kinich_Ajaw_Model3.glb'}]" unlit :brightness="1.4" />
 * <ModelViewer name="Big_Ajaw" src="/skillobj/SkillObj_Kinich_Big_Ajaw_01_Model.zip.zip"" unlit :brightness="1.4" /> - raw
+
+## <img src="/Mualani_Icon.png" width="30" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Mualani 
+(assets still in-progress)
+* <ModelViewer name="Fugu" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
+* <ModelViewer name="FuguCostume" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Maracas" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Missile" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Missile_Tiny" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
+* <ModelViewer name="RocketLauncher" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
 
 ## <img src="/Kirara_Icon.png" width="45" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Kirara
 * <ModelViewer name="DeliveryBox + Glasses" src="/skillobj/SkillObj_Momoka_DeliveryBox_Model.zip" glb="/models/SkillObj_Momoka_DeliveryBox_Model1.glb" glb2="/models/SkillObj_Momoka_DeliveryBox_Model2.glb" label="1" label2="2" unlit :brightness="1.4" />
@@ -132,7 +141,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * IceBall
 
 ## Gorou 
-* <ModelViewer name="Diaoyu" src="/skillobj/Gorou DiaoYu.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Diaoyu" src="/skillobj/Gorou DiaoYu.zip" glb="/models/SkillObj_Gorou_DiaoYu_Model.glb" unlit :brightness="1.4" />
 * <ModelViewer name="Shirou" src="/skillobj/Gorou Shirou.zip" glb="/models/SkillObj_Gorou_Shirou_Model.glb" unlit :brightness="1.4" />
 
 ## Hu Tao 
@@ -142,7 +151,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * ElementalBurstArmor
 
 ## Kamisato Ayato 
-* <ModelViewer name="BubbleTea" src="/skillobj/SkillObj_Ayato_BubbleTea_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="BubbleTea" src="/skillobj/SkillObj_Ayato_BubbleTea_Model.zip" glb="/models/SkillObj_Ayato_BubbleTea_Model.glb" unlit :brightness="1.4" />
 * AyatoShadow
 
 ## Keqing
@@ -160,8 +169,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * Whole
 
 ## Layla 
-* <ModelViewer name="Paper" src="/skillobj/Layla Show02 Paper.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Pen" src="/skillobj/SkillObj_Layla_Show02_Pen_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Paper" src="/skillobj/Layla Show02 Paper.zip" glb="/models/SkillObj_Layla_Show02_Paper_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Pen" src="/skillobj/SkillObj_Layla_Show02_Pen_Model.zip" glb="/models/SkillObj_Layla_Show02_Pen_Model.glb" unlit :brightness="1.4" />
 * ElementalBurst
 
 ## Lisa 
@@ -171,7 +180,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 ## Mika 
 * <ModelViewer name="Bag_Book" src="/skillobj/SkillObj_Mika_Bag_Book_Model.zip" glb="/models/SkillObj_Lohen_Book_Show01_Model.glb" unlit :brightness="1.4" />
 * Pen
-* <ModelViewer name="Crossbow" src="/skillobj/.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Crossbow" src="/skillobj/.zip" glb="/models/SkillObj_Mika_Crossbow_Model.glb" unlit :brightness="1.4" />
 
 ## Mona 
 * Astrobe
@@ -214,7 +223,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * KasaRing
 
 ## Xiangling
-* <ModelViewer name="Guoba" src="/skillobj/SkillObj_Panda_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Guoba" src="/skillobj/SkillObj_Panda_Model.zip" glb="/models/SkillObj_Panda_Model.glb" unlit :brightness="1.4" />
 
 ## Yae Miko
 * Gohei
@@ -257,20 +266,21 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="HotDog" src="/skillobj/SkillObj_Alyosha_HotDog_Model.zip" glb="/models/SkillObj_Alyosha_HotDog_Model.glb" unlit :brightness="1.4" />
 
 ## Vodyanitsa
-* <ModelViewer name="FlyingFish" src="/skillobj/SkillObj_Vodyanitsa_FlyingFish_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Mic" src="/skillobj/SkillObj_Vodyanitsa_Mic_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Mirror" src="/skillobj/SkillObj_Vodyanitsa_Mirror_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="FlyingFish" src="/skillobj/SkillObj_Vodyanitsa_FlyingFish_Model.zip" glb="/models/SkillObj_Vodyanitsa_FlyingFish_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Mic" src="/skillobj/SkillObj_Vodyanitsa_Mic_Model.zip" glb="/models/SkillObj_Vodyanitsa_Mic_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Mirror" src="/skillobj/SkillObj_Vodyanitsa_Mirror_Model.zip" glb="/models/SkillObj_Vodyanitsa_Mirror_Model.glb" unlit :brightness="1.4" />
 
 ## Valeriy
-* <ModelViewer name="Book" src="/skillobj/SkillObj_Valeriy_Book_Model.zip" unlit :brightness="1.4" />
-* <ModelViewer name="Drone + Clipboard" src="/skillobj/SkillObj_Valeriy_Drone_Model.zip" unlit :brightness="1.4" />
-* <ModelViewer name="Paper" src="/skillobj/SkillObj_Valeriy_Paper_Model.zip" unlit :brightness="1.4" />
-* <ModelViewer name="Shield" src="/skillobj/SkillObj_Valeriy_Shield.zip" unlit :brightness="1.4" />
-* <ModelViewer name="PocketWatch" src="/skillobj/SkillObj_Valeriy_PocketWatch_Model.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Book" src="/skillobj/SkillObj_Valeriy_Book_Model.zip" glb="/models/SkillObj_Valeriy_Book_Model.glb" unlit :brightness="1" />
+* <ModelViewer name="Drone + Clipboard" src="/skillobj/SkillObj_Valeriy_Drone_Model.zip" glb="/models/SkillObj_Valeriy_Drone_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Paper" src="/skillobj/SkillObj_Valeriy_Paper_Model.zip" glb="/models/SkillObj_Valeriy_Paper_Model.glb" unlit :brightness="1" />
+* <ModelViewer name="Shield" src="/skillobj/SkillObj_Valeriy_Shield.zip" glb="/models/SkillObj_Valeriy_Shield_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="PocketWatch" src="/skillobj/SkillObj_Valeriy_PocketWatch_Model.zip" glb="/models/SkillObj_Valeriy_PocketWatch_Model.glb" unlit :brightness="1.4" />
+* Pen
 
 ## Odette
 * <ModelViewer name="Partner" src="/skillobj/SkillObj_Odette_Partner_Model.zip" glb="/models/SkillObj_Odette_Partner_Model.glb"  unlit :brightness="1.4" />
-* <ModelViewer name="Salad" src="/skillobj/SkillObj_Odette_Salad_Model.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Salad" src="/skillobj/SkillObj_Odette_Salad_Model.zip" glb="/models/SkillObj_Odette_Salad_Model.glb" unlit :brightness="1" />
 
 ## Mavuika
 * MotorCycle
