@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { withBase } from 'vitepress'
 
 const props = defineProps({
   name: { type: String, required: true },
@@ -330,7 +331,7 @@ onBeforeUnmount(() => {
           </div>
           <div ref="canvasWrap" class="mv-canvas">
             <div v-if="noPreview" class="mv-msg">no preview ueue ૮◞ ‸ ◟ ა</div>
-            <div v-if="loading" class="mv-msg">loading model…</div>
+            <div v-if="loading" class="mv-msg">Investigating model...</div>
             <div v-if="error" class="mv-msg mv-err">{{ error }}</div>
           </div>
         </div>
@@ -420,18 +421,23 @@ onBeforeUnmount(() => {
   background: rgba(0, 0, 0, 0.6);
   display: flex; align-items: center; justify-content: center;
 }
+
 .mv-modal {
-  width: min(720px, 94vw);
+  width: min(500px, 94vw);
   background: var(--vp-c-bg);
-  border-radius: 12px;
+  border: 1px solid rgba(166, 104, 118, 0.55);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+
+  box-shadow:
+    0 0 0 1px rgba(137, 62, 84, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(137, 62, 84, 0.15);
 }
 .mv-head {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--vp-c-divider);
+  background: rgba(137, 62, 84, 0.12);
+  border-bottom: 1px solid rgba(166, 104, 118, 0.3);
+  padding: 14px 18px;
 }
 .mv-body { display: flex; }
 .mv-side {
@@ -489,7 +495,27 @@ onBeforeUnmount(() => {
 .mv-dl:hover { background: var(--ag-accent); color: #fff; }
 .mv-foot { display: flex; justify-content: center; padding: 10px 0 4px; }
 .mv-close { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--vp-c-text-1); }
-.mv-canvas { position: relative; flex: 1; min-width: 0; height: 420px; }
+
+.mv-canvas {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 420px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(166, 104, 118, 0.24),
+      transparent 55%
+    ),
+    linear-gradient(
+      145deg,
+      #291c23,
+      #39232e 55%,
+      #211a20
+    );
+}
+
 .mv-msg {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
