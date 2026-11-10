@@ -47,7 +47,7 @@ Don't find the one you're looking for? probably im still working on it! check ou
 
 ## <img src="/Mualani_Icon.png" width="30" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Mualani 
 * <ModelViewer name="Fugu" src="/skillobj/SkillObj_Mualani_Fugu_Model.zip" glb="/models/SkillObj_Mualani_Fugu_Model.glb" unlit :brightness="1.4" />
-* <ModelViewer name="FuguCostume" src="/skillobj/.zip" glb="/models/SkillObj_Mualani_FuguCostume_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="FuguCostume" src="/skillobj/SkillObj_Mualani_FuguCostume_Model.zip" glb="/models/SkillObj_Mualani_FuguCostume_Model.glb" unlit :brightness="1.4" />
 * <ModelViewer name="Maracas" src="/skillobj/SkillObj_Mualani_Maracas_Model.zip" glb="/models/SkillObj_Mualani_Maracas_Model.glb" unlit :brightness="1.4" />
 * <ModelViewer name="Missile" src="/skillobj/SkillObj_Mualani_Missile_Model.zip" glb="/models/SkillObj_Mualani_Missile_Model.glb" unlit :brightness="1.4" />
 
