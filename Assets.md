@@ -46,11 +46,12 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="Big_Ajaw" src="/skillobj/SkillObj_Kinich_Big_Ajaw_01_Model.zip.zip"" unlit :brightness="1.4" /> - raw
 
 ## <img src="/Mualani_Icon.png" width="30" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Mualani 
-(assets still in-progress)
-* <ModelViewer name="Fugu" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
-* <ModelViewer name="FuguCostume" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
-* <ModelViewer name="Maracas" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
-* <ModelViewer name="Missile" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Fugu" src="/skillobj/.zip" glb="/models/SkillObj_Mualani_Fugu_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="FuguCostume" src="/skillobj/.zip" glb="/models/SkillObj_Mualani_FuguCostume_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Maracas" src="/skillobj/.zip" glb="/models/SkillObj_Mualani_Maracas_Model.glb" unlit :brightness="1.4" />
+
+        (assets still in-progress)
+* <ModelViewer name="Missile" src="/skillobj/.zip" glb="/models/SkillObj_Mualani_Missile_Model.glb" unlit :brightness="1.4" />
 * <ModelViewer name="Missile_Tiny" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
 * <ModelViewer name="RocketLauncher" src="/skillobj/.zip" glb="/models/.glb" unlit :brightness="1.4" />
 
