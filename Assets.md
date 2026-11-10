@@ -246,8 +246,8 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="Uchiwa" src="/skillobj/SkillObj_Sara_Uchiwa.zip" glb="/models/SkillObj_Sara_Uchiwa_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Mitya_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Mitya
-* <ModelViewer name="Notebook" src="/skillobj/.zip" glb="/models/SkillObj_Mitya_Notebook_Model.glb" unlit :brightness="1.4" />
-* <ModelViewer name="Partner01" src="/skillobj/.zip" glb="/models/SkillObj_Mitya_Partner01_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Notebook" src="/skillobj/SkillObj_Mitya_Notebook_Model.zip" glb="/models/SkillObj_Mitya_Notebook_Model.glb" unlit :brightness="1.4" />
+* <ModelViewer name="Partner01" src="/skillobj/SkillObj_Mitya_Partner01_Model.zip" glb="/models/SkillObj_Mitya_Partner01_Model.glb" unlit :brightness="1.4" />
 * <ModelViewer name="Partner02" src="/skillobj/SkillObj_Mitya_Partner02_Model.zip" glb="/models/SkillObj_Mitya_Partner02_Model.glb" unlit :brightness="1.4" />
 
 ## <img src="/Alyosha_icon.png" width="25" style="display: inline-block; vertical-align: middle; margin-left: 5px;" /> Alyosha
@@ -262,11 +262,11 @@ Don't find the one you're looking for? probably im still working on it! check ou
 * <ModelViewer name="Mirror" src="/skillobj/SkillObj_Vodyanitsa_Mirror_Model.zip"" unlit :brightness="1.4" />
 
 ## Valeriy
-* <ModelViewer name="Book" src="/skillobj/SkillObj_Valeriy_Book_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Drone + Clipboard" src="/skillobj/SkillObj_Valeriy_Drone_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Paper" src="/skillobj/SkillObj_Valeriy_Paper_Model.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="Shield" src="/skillobj/SkillObj_Valeriy_Shield.zip"" unlit :brightness="1.4" />
-* <ModelViewer name="PocketWatch" src="/skillobj/SkillObj_Valeriy_PocketWatch_Model.zip"" unlit :brightness="1.4" />
+* <ModelViewer name="Book" src="/skillobj/SkillObj_Valeriy_Book_Model.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Drone + Clipboard" src="/skillobj/SkillObj_Valeriy_Drone_Model.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Paper" src="/skillobj/SkillObj_Valeriy_Paper_Model.zip" unlit :brightness="1.4" />
+* <ModelViewer name="Shield" src="/skillobj/SkillObj_Valeriy_Shield.zip" unlit :brightness="1.4" />
+* <ModelViewer name="PocketWatch" src="/skillobj/SkillObj_Valeriy_PocketWatch_Model.zip" unlit :brightness="1.4" />
 
 ## Odette
 * <ModelViewer name="Partner" src="/skillobj/SkillObj_Odette_Partner_Model.zip" glb="/models/SkillObj_Odette_Partner_Model.glb"  unlit :brightness="1.4" />
