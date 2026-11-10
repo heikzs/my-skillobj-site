@@ -1,0 +1,52 @@
+/* ============================================================
+   Heizou site background
+   - page gradient = the card gradient, flipped (strong at the bottom-right)
+   - big Heartstopper Strike icon, slowly spinning on the right, on every page
+   Import once:   .vitepress/theme/index.js  ->  import './heizou-bg.css'
+   Image:         docs/public/easter/talent-heartstopper.png
+   ============================================================ */
+
+:root {
+  --hz-deep: #893d54;
+  --hz-soft: #a66876;
+
+  /* tweak these */
+  --hz-spin-opacity: 0.16;
+  --hz-spin-size: min(88vh, 62vw);
+  --hz-spin-speed: 120s; /* one full turn */
+}
+
+/* let the gradient on <html> show through VitePress's solid body colour */
+html {
+  background:
+    linear-gradient(335deg,
+      color-mix(in srgb, var(--hz-deep) 24%, var(--vp-c-bg)) 0%,
+      color-mix(in srgb, var(--hz-deep) 7%, var(--vp-c-bg)) 45%,
+      var(--vp-c-bg) 100%) fixed;
+  min-height: 100%;
+}
+body { background: transparent; }
+
+/* big spinning icon, fixed to the right edge, behind all content */
+body::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  width: var(--hz-spin-size);
+  height: var(--hz-spin-size);
+  top: calc(50% - var(--hz-spin-size) / 2);
+  left: calc(var(--hz-spin-size) * -0.28); /* a bit cropped by the edge */
+  background: url('/easter/talent-heartstopper.png') center / contain no-repeat;
+  opacity: var(--hz-spin-opacity);
+  pointer-events: none;
+  user-select: none;
+  animation: hz-spin var(--hz-spin-speed) linear infinite;
+}
+@keyframes hz-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 768px) {
+  :root { --hz-spin-size: 90vw; --hz-spin-opacity: 0.1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+}

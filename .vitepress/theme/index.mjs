@@ -2,7 +2,9 @@ import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import AudioPlayer from './AudioPlayer.vue'
 import ModelViewer from './ModelViewer.vue'
+import AssetsGallery from './AssetsGallery.vue'
 import './custom.css'
+import './heizou-bg.css'
 
 const myPlaylist = [
   { src: '/Storm Chaser.mp3', title: 'Storm Chaser' },
@@ -19,5 +21,6 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('ModelViewer', ModelViewer)
+    app.component('AssetsGallery', AssetsGallery)
   }
 }

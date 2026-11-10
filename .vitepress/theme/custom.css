@@ -9,3 +9,56 @@
 .my-audio-title-color {
   color: #a66876 !important;
 }
+
+.assets-page h2 {
+  border-top: none;
+  margin: 40px 0 12px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* the grid */
+.assets-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* each bullet = a card */
+.assets-page li {
+  margin: 0;
+  padding: 14px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assets-page li:hover {
+  transform: translateY(-4px);
+  border-color: #eea5a5;
+  box-shadow: 0 8px 20px rgba(238, 165, 165, 0.25);
+}
+
+.assets-page li:not(:has(*)) {
+  opacity: 0.55;
+  border-style: dashed;
+  font-size: 0.85rem;
+}
+.assets-page li:not(:has(*))::after {
+  content: "soon > <";
+  display: block;
+  font-size: 0.7rem;
+  margin-top: 4px;
+}
