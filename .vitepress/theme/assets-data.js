@@ -543,7 +543,7 @@ export const characters =
   },
   {
     "name": "Gorou",
-    "icon": "",
+    "icon": "Gorou_icon.png",
     "aliases": "",
     "assets": [
       {
@@ -649,7 +649,7 @@ export const characters =
   },
   {
     "name": "Layla",
-    "icon": "",
+    "icon": "Layla_icon.png",
     "aliases": "",
     "assets": [
       {
@@ -684,7 +684,7 @@ export const characters =
   },
   {
     "name": "Mika",
-    "icon": "",
+    "icon": "Mika_icon.png",
     "aliases": "",
     "assets": [
       {
@@ -844,11 +844,11 @@ export const characters =
   },
   {
     "name": "Xiangling",
-    "icon": "",
+    "icon": "Xiangling_icon.png",
     "aliases": "",
     "assets": [
       {
-        "name": "Guoba",
+        "name": "Panda",
         "src": "/skillobj/SkillObj_Panda_Model.zip",
         "glb": "/models/SkillObj_Panda_Model.glb"
       }
@@ -1014,8 +1014,8 @@ export const characters =
   },
   {
     "name": "Vodyanitsa",
-    "icon": "",
-    "aliases": "",
+    "icon": "Vodyanitsa_icon.png",
+    "aliases": "vodyanitsa",
     "assets": [
       {
         "name": "FlyingFish",
@@ -1037,8 +1037,8 @@ export const characters =
   },
   {
     "name": "Valeriy",
-    "icon": "",
-    "aliases": "",
+    "icon": "Valeriy_icon.png",
+    "aliases": "valeriy",
     "assets": [
       {
         "name": "Book",
@@ -1075,8 +1075,8 @@ export const characters =
   },
   {
     "name": "Odette",
-    "icon": "",
-    "aliases": "",
+    "icon": "Odette_icon.png",
+    "aliases": "odette",
     "assets": [
       {
         "name": "Partner",

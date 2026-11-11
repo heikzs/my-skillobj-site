@@ -3,6 +3,7 @@ import { h } from 'vue'
 import AudioPlayer from './AudioPlayer.vue'
 import ModelViewer from './ModelViewer.vue'
 import AssetsGallery from './AssetsGallery.vue'
+import IdleChibi from './IdleChibi.vue'
 import './custom.css'
 import './heizou-bg.css'
 
@@ -16,7 +17,8 @@ export default {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(AudioPlayer, { playlist: myPlaylist }),
-      'sidebar-nav-before': () => h(AudioPlayer, { playlist: myPlaylist })
+      'sidebar-nav-before': () => h(AudioPlayer, { playlist: myPlaylist }),
+      'layout-bottom': () => h(IdleChibi)
     })
   },
   enhanceApp({ app }) {

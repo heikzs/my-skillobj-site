@@ -1,27 +1,32 @@
 <script setup>
-import { ref, computed, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import ModelViewer from './ModelViewer.vue'
 import { withBase } from 'vitepress'
 import { characters } from './assets-data.js'
 
 // ---- hover easter eggs: a random chibi peeks out of the card corner ----
 // put the files in  docs/public/easter/  (served from /easter/)
-const EGGS = [1, 2, 3, 4, 5].map(n => withBase(`/easter/heizou-${n}.png`))
+const EGGS = [1, 3, 4].map(n => withBase(`/easter/heizou-${n}.png`))
 const egg = ref({}) // character id -> { src, left, n }
 let eggCount = 0
 
+// rare guest: 1 in 4 hovers shows a Kazuha chibi instead of a Heizou one (files are .webp)
+const KAZUHA = [1, 2, 3].map(n => withBase(`/easter/kazuha-${n}.webp`))
+const KAZUHA_CHANCE = 0.1
+
 function pickEgg(id) {
   const prev = egg.value[id]
-  let i
-  do { i = Math.floor(Math.random() * EGGS.length) } while (EGGS.length > 1 && prev && prev.i === i)
+  const pool = Math.random() < KAZUHA_CHANCE ? KAZUHA : EGGS
+  let src
+  // don't show the same picture twice in a row on the same card
+  do { src = pool[Math.floor(Math.random() * pool.length)] } while (pool.length > 1 && prev && prev.src === src)
   // new key each hover so the pop-in animation replays
-  egg.value[id] = { i, src: EGGS[i], left: Math.random() < 0.5, n: ++eggCount }
+  egg.value[id] = { src, left: Math.random() < 0.5, n: ++eggCount }
 }
 
 const query = ref('')
 const filter = ref('all') // all | raw | soon
-const activeId = ref(null) // id of the character whose popup is open
-const panel = ref(null)
+const activeId = ref(null) // id of the character whose card is expanded
 
 function statusOf(a) {
   if (a.glb || a.glb2 || (a.modes && a.modes.length)) return 'preview'
@@ -29,22 +34,33 @@ function statusOf(a) {
   return 'soon'
 }
 
+// No guessing from names: an asset is a weapon only when you mark it in assets-data.js with  "weapon": true
+// (any non-empty value works). Only that asset card gets the tag, not the character card.
+const isWeapon = a => !!a.weapon
+
 const all = characters.map(c => ({
   ...c,
-  assets: c.assets.map(a => ({ ...a, status: statusOf(a) }))
+  assets: c.assets.map(a => ({ ...a, status: statusOf(a), isWeapon: isWeapon(a) }))
 }))
 
 const counts = computed(() => {
-  const n = { all: 0, preview: 0, raw: 0, soon: 0 }
-  all.forEach(c => c.assets.forEach(a => { n.all++; n[a.status]++ }))
+  const n = { all: 0, preview: 0, raw: 0, soon: 0, weapon: 0 }
+  all.forEach(c => c.assets.forEach(a => { n.all++; n[a.status]++; if (a.isWeapon) n.weapon++ }))
   return n
 })
 
+// the weapon chip is always shown (it just reads 0 until you mark an asset with "weapon": true)
 const chips = computed(() => [
   { key: 'all', label: 'all' },
   { key: 'raw', label: 'raw' },
-  { key: 'soon', label: 'soon' }
+  { key: 'soon', label: 'soon' },
 ].map(c => ({ ...c, n: counts.value[c.key] })))
+
+function matchesFilter(a) {
+  if (filter.value === 'all') return true
+  if (filter.value === 'weapon') return a.isWeapon
+  return a.status === filter.value
+}
 
 const filtering = computed(() => query.value.trim() !== '' || filter.value !== 'all')
 
@@ -54,8 +70,8 @@ const visible = computed(() => {
     .map(c => {
       const charHit = q && `${c.name} ${c.aliases}`.toLowerCase().includes(q)
       const assets = c.assets.filter(a =>
-        (filter.value === 'all' || a.status === filter.value) &&
-        (!q || charHit || a.name.toLowerCase().includes(q))
+        matchesFilter(a) &&
+        (!q || charHit || a.name.toLowerCase().includes(q) || (a.isWeapon && 'weapon'.includes(q)))
       )
       return { ...c, assets }
     })
@@ -75,32 +91,52 @@ function summaryOf(c) {
   ].filter(b => b.n)
 }
 
-// ---- popup ----
-const active = computed(() =>
-  activeId.value
-    ? visible.value.find(c => c.id === activeId.value) || all.find(c => c.id === activeId.value)
-    : null
-)
+// ---- expand in place (no popup): the card takes the full row and grows open ----
+const EASE = 'cubic-bezier(0.2, 0.7, 0.2, 1)'
+const reduced = () => typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function openChar(c) { activeId.value = c.id }
-function closeChar() { activeId.value = null }
-function clear() { query.value = ''; filter.value = 'all' }
-
-function onKey(e) {
-  if (e.key === 'Escape' && activeId.value) closeChar()
+// no auto-scroll: the page stays exactly where it is while the card grows
+function toggleChar(c) {
+  activeId.value = activeId.value === c.id ? null : c.id
 }
 
-// lock page scroll while the popup is open, focus it so Esc / Tab behave
-watch(activeId, async id => {
-  if (typeof document === 'undefined') return
-  document.body.style.overflow = id ? 'hidden' : ''
-  if (id) { await nextTick(); panel.value && panel.value.focus() }
-})
+function clear() { query.value = ''; filter.value = 'all' }
 
-onMounted(() => window.addEventListener('keydown', onKey))
+// height + opacity only (never transform): the viewer has its own fixed-position popup that a transform would trap
+function onEnter(el, done) {
+  if (reduced()) return done()
+  const h = el.scrollHeight
+  el.style.overflow = 'hidden'
+  const a = el.animate(
+    [{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }],
+    { duration: 440, easing: EASE }
+  )
+  a.onfinish = () => { el.style.overflow = ''; done() }
+}
+
+function onLeave(el, done) {
+  if (reduced()) return done()
+  const h = el.offsetHeight
+  el.style.overflow = 'hidden'
+  const a = el.animate(
+    [{ height: h + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
+    { duration: 300, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'forwards' }
+  )
+  a.onfinish = done
+}
+
+function onKey(e) {
+  if (e.key === 'Escape' && activeId.value) activeId.value = null
+}
+
+// marks the page so the global rules below can hide VitePress's "On this page" outline here only
+onMounted(() => {
+  window.addEventListener('keydown', onKey)
+  document.body.classList.add('ag-page')
+})
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', onKey)
-  document.body.style.overflow = ''
+  document.body.classList.remove('ag-page')
 })
 </script>
 
@@ -133,19 +169,18 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="ag-cards">
-      <button
-        v-for="c in visible"
+      <div
+        v-for="(c, idx) in visible"
         :id="'char-' + c.id"
         :key="c.id"
-        type="button"
+        :style="{ '--i': idx }"
         class="ag-char"
-        aria-haspopup="dialog"
-        @click="openChar(c)"
+        :class="{ open: activeId === c.id }"
         @mouseenter="pickEgg(c.id)"
-        @focus="pickEgg(c.id)"
+        @focusin="pickEgg(c.id)"
       >
         <img
-          v-if="egg[c.id]"
+          v-if="egg[c.id] && activeId !== c.id"
           :key="egg[c.id].n"
           class="ag-egg"
           :class="{ left: egg[c.id].left }"
@@ -154,57 +189,40 @@ onBeforeUnmount(() => {
           aria-hidden="true"
           draggable="false"
         />
-        <span v-if="c.icon" class="ag-avatar">
-          <img :src="c.icon" :alt="c.name" :style="{ transform: 'scale(' + (c.iconScale || 1) + ')' }" loading="lazy" />
-        </span>
-        <span v-else class="ag-avatar ag-initial">{{ c.name.charAt(0) }}</span>
 
-        <span class="ag-name">{{ c.name }}</span>
-        <span class="ag-num">{{ c.assets.length }} {{ c.assets.length === 1 ? 'asset' : 'assets' }}</span>
-        <span class="ag-meta">
-          <span v-for="b in summaryOf(c)" :key="b.key" class="ag-badge" :class="'is-' + b.key">{{ b.label }} {{ b.n }}</span>
-        </span>
-      </button>
-    </div>
+        <button
+          type="button"
+          class="ag-head"
+          :aria-expanded="activeId === c.id"
+          @click="toggleChar(c)"
+        >
+          <span v-if="c.icon" class="ag-avatar">
+            <img :src="c.icon" :alt="c.name" :style="{ transform: 'scale(' + (c.iconScale || 1) + ')' }" loading="lazy" />
+          </span>
+          <span v-else class="ag-avatar ag-initial">{{ c.name.charAt(0) }}</span>
 
-    <div v-if="!visible.length" class="ag-empty">
-      <p>nothing found ( ´•̥̥̥ω•̥̥̥` )</p>
-      <button type="button" class="ag-link" @click="clear">clear search</button>
-    </div>
+          <span class="ag-name">{{ c.name }}</span>
+          <span class="ag-num">{{ c.assets.length }} {{ c.assets.length === 1 ? 'asset' : 'assets' }}</span>
+          <span class="ag-meta">
+            <span v-for="b in summaryOf(c)" :key="b.key" class="ag-badge" :class="'is-' + b.key">{{ b.label }} {{ b.n }}</span>
+          </span>
+          <span class="ag-x" aria-hidden="true">×</span>
+        </button>
 
-    <!-- popup: teleported to <body> so sticky bars / stacking contexts can't clip it -->
-    <Teleport to="body">
-      <Transition name="ag-fade">
-        <div v-if="active" class="ag-overlay" @mousedown.self="closeChar">
-          <div
-            ref="panel"
-            class="ag-panel"
-            role="dialog"
-            aria-modal="true"
-            :aria-label="active.name + ' assets'"
-            tabindex="-1"
-          >
-            <header class="ag-panel-head">
-              <span v-if="active.icon" class="ag-avatar ag-avatar-sm">
-                <img :src="active.icon" :alt="active.name" :style="{ transform: 'scale(' + (active.iconScale || 1) + ')' }" />
-              </span>
-              <span v-else class="ag-avatar ag-avatar-sm ag-initial">{{ active.name.charAt(0) }}</span>
-              <span class="ag-panel-title">{{ active.name }}</span>
-              <span class="ag-num">{{ active.assets.length }} {{ active.assets.length === 1 ? 'asset' : 'assets' }}</span>
-              <button type="button" class="ag-close" aria-label="Close" @click="closeChar">×</button>
-            </header>
-
+        <Transition :css="false" @enter="onEnter" @leave="onLeave">
+          <div v-if="activeId === c.id" class="ag-body">
             <div class="ag-grid">
-              <template v-for="(a, i) in active.assets" :key="active.id + '-' + i">
+              <template v-for="(a, i) in c.assets" :key="c.id + '-' + i">
                 <div v-if="a.status === 'soon'" class="ag-soon" :style="{ '--i': i }">
                   <span class="ag-soon-name">{{ a.name }}</span>
-                  <span class="ag-soon-tag">soon~</span>
+                  <span class="ag-soon-tag">soon~<template v-if="a.isWeapon"> · weapon</template></span>
                 </div>
                 <ModelViewer
                   v-else
                   :style="{ '--i': i }"
                   card
                   unlit
+                  :tag="a.isWeapon ? 'weapon' : ''"
                   :name="a.name"
                   :src="a.src"
                   :thumb="a.thumb"
@@ -217,40 +235,56 @@ onBeforeUnmount(() => {
                   :brightness="a.brightness || 1.4"
                 />
               </template>
-              <div v-if="!active.assets.length" class="ag-soon">
+              <div v-if="!c.assets.length" class="ag-soon" :style="{ '--i': 0 }">
                 <span class="ag-soon-name">nothing yet</span>
                 <span class="ag-soon-tag">soon~</span>
               </div>
             </div>
           </div>
-        </div>
-      </Transition>
-    </Teleport>
+        </Transition>
+      </div>
+    </div>
+
+    <div v-if="!visible.length" class="ag-empty">
+      <p>nothing found ( ´•̥̥̥ω•̥̥̥` )</p>
+      <button type="button" class="ag-link" @click="clear">clear search</button>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .ag { margin-top: 8px; }
 
-/* shared Heizou card gradient: main cards, popup header and popup asset cards */
-.ag-char, .ag-grid, .ag-panel-head {
+/* shared Heizou card gradient: character cards and asset cards */
+.ag-char, .ag-grid {
   --hz-card-bg: linear-gradient(155deg,
     color-mix(in srgb, #893d54 22%, var(--vp-c-bg-soft)) 0%,
     color-mix(in srgb, #893d54 6%, var(--vp-c-bg-soft)) 100%);
 }
 
 /* ---- toolbar ---- */
+/* sticky again, but frosted glass instead of the old solid strip with a border:
+   translucent + blurred + rounded, no outline, so it floats instead of looking cut out */
 .ag-bar {
   position: sticky;
-  top: var(--vp-nav-height, 64px);
+  top: calc(var(--vp-nav-height, 64px) + var(--vp-layout-top-height, 0px) + var(--vp-local-nav-height, 0px) + 8px);
   z-index: 20;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px 14px;
-  padding: 12px 0;
-  background: var(--vp-c-bg);
-  border-bottom: 1px solid var(--vp-c-divider);
+  margin: 0 -10px;
+  padding: 8px 10px;
+  background: color-mix(in srgb, var(--vp-c-bg) 72%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: none;
+  border-radius: 18px;
+  animation: ag-fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+@keyframes ag-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .ag-search { position: relative; flex: 1 1 240px; }
 .ag-search-ico {
@@ -265,7 +299,7 @@ onBeforeUnmount(() => {
   font-size: 14px;
   color: var(--vp-c-text-1);
   background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
+  border: 1px solid transparent;
   border-radius: 19px;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -277,8 +311,8 @@ onBeforeUnmount(() => {
   padding: 4px 12px;
   font-size: 12.5px;
   color: var(--vp-c-text-2);
-  background: transparent;
-  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  border: 1px solid transparent;
   border-radius: 14px;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -299,47 +333,88 @@ onBeforeUnmount(() => {
 }
 .ag-link:hover { text-decoration: underline; }
 
-/* ---- character cards (square) ---- */
+/* ---- character cards ---- */
 .ag-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-flow: row dense; /* cards fill the gaps left by an expanded card */
+  align-items: start;
+  gap: 14px;
   margin-top: 18px;
 }
 
 .ag-char {
   --hz-deep: #893d54;
   --hz-soft: #a66876;
+  min-width: 0;
+  color: var(--vp-c-text-1);
+  background: var(--hz-card-bg);
+  border: 1px solid var(--hz-deep);
+  border-radius: 18px;
+  scroll-margin-top: 84px;
+  position: relative;
+  overflow: hidden; /* keeps the easter egg inside the rounded card */
+  animation: ag-fade-up 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 45ms + 80ms);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.ag-char:not(.open):hover,
+.ag-char:not(.open):focus-within {
+  transform: translateY(-4px);
+  border-color: var(--hz-soft);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* expanded: takes the whole row. NO transform here, a transform would trap the viewer's fixed-position popup */
+.ag-char.open {
+  grid-column: 1 / -1;
+  border-color: var(--hz-soft);
+}
+
+/* the clickable header (the whole closed card is this button) */
+.ag-head {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 14px;
+  gap: 4px;
+  padding: 16px 12px 14px;
   font: inherit;
-  color: var(--vp-c-text-1);
+  color: inherit;
   text-align: center;
+  background: none;
+  border: none;
   cursor: pointer;
-  /* rose-tinted so a character card reads as a different layer from the asset cards in the popup */
-  background: var(--hz-card-bg);
-  border: 1px solid var(--hz-deep);
-  border-radius: 20px;
-  scroll-margin-top: 140px;
-  position: relative;
-  overflow: hidden; /* keeps the easter egg inside the rounded card */
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.ag-char:hover,
-.ag-char:focus-visible {
-  transform: translateY(-4px);
-  border-color: var(--hz-soft);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35); /* plain shadow, no coloured glow */
   outline: none;
 }
+.ag-head:focus-visible { box-shadow: inset 0 0 0 2px var(--hz-soft); border-radius: 18px; }
 
-.ag-char > :not(.ag-egg) { position: relative; z-index: 1; }
+.ag-char.open .ag-head {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.ag-x {
+  display: none;
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--vp-c-text-2);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 50%;
+  transition: all 0.15s ease;
+}
+.ag-char.open .ag-x { display: block; }
+.ag-char.open .ag-head:hover .ag-x { color: #fff; background: var(--hz-deep); border-color: var(--hz-deep); }
 
 /* easter egg: faint chibi that pops up in the bottom corner on hover */
 .ag-egg {
@@ -360,14 +435,14 @@ onBeforeUnmount(() => {
 .ag-egg { --egg-rot: 8deg; transform: translateY(18%) rotate(var(--egg-rot)); }
 /* animation (not transition) so it also plays when a fresh egg is swapped in under the cursor */
 .ag-char:hover .ag-egg,
-.ag-char:focus-visible .ag-egg { opacity: 0.34; animation: ag-egg-in 0.4s cubic-bezier(0.2, 0.8, 0.3, 1.2) both; }
+.ag-char:focus-within .ag-egg { opacity: 0.34; animation: ag-egg-in 0.4s cubic-bezier(0.2, 0.8, 0.3, 1.2) both; }
 @keyframes ag-egg-in {
   from { opacity: 0; transform: translateY(18%) rotate(var(--egg-rot)); }
   to   { opacity: 0.34; transform: translateY(0) rotate(calc(var(--egg-rot) * -0.5)); }
 }
 @media (hover: none) { .ag-egg { display: none; } }
 
-/* twinkling sparkles (same ✦ the chibi pics have) */
+/* twinkling sparkles (same ✦ the chibi pics have), closed cards only */
 .ag-char::before,
 .ag-char::after {
   content: '✦';
@@ -379,40 +454,40 @@ onBeforeUnmount(() => {
 }
 .ag-char::before { top: 12%; left: 13%; font-size: 16px; }
 .ag-char::after { top: 20%; right: 14%; font-size: 11px; }
-.ag-char:hover::before,
-.ag-char:focus-visible::before { animation: ag-twinkle 1.8s ease-in-out infinite; }
-.ag-char:hover::after,
-.ag-char:focus-visible::after { animation: ag-twinkle 1.8s ease-in-out 0.6s infinite; }
+.ag-char:not(.open):hover::before,
+.ag-char:not(.open):focus-within::before { animation: ag-twinkle 1.8s ease-in-out infinite; }
+.ag-char:not(.open):hover::after,
+.ag-char:not(.open):focus-within::after { animation: ag-twinkle 1.8s ease-in-out 0.6s infinite; }
 @keyframes ag-twinkle {
   0%, 100% { opacity: 0.1; transform: scale(0.6) rotate(0deg); }
   50% { opacity: 0.8; transform: scale(1.1) rotate(25deg); }
 }
 
-.ag-char:hover .ag-avatar,
-.ag-char:focus-visible .ag-avatar {
+.ag-char:not(.open):hover .ag-avatar,
+.ag-char:not(.open):focus-within .ag-avatar {
   transform: scale(1.07) rotate(-4deg);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--hz-deep) 40%, transparent); /* flat ring, not a blur */
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--hz-deep) 40%, transparent);
 }
-.ag-char:hover .ag-name,
-.ag-char:focus-visible .ag-name { color: color-mix(in srgb, var(--hz-soft) 55%, var(--vp-c-text-1)); }
+.ag-char:not(.open):hover .ag-name,
+.ag-char:not(.open):focus-within .ag-name { color: color-mix(in srgb, var(--hz-soft) 55%, var(--vp-c-text-1)); }
 
 @media (prefers-reduced-motion: reduce) {
-  .ag-char::before, .ag-char::after, .ag-egg { animation: none !important; }
-  .ag-char:hover .ag-egg, .ag-char:focus-visible .ag-egg { transform: none; }
+  .ag-bar, .ag-char, .ag-char::before, .ag-char::after, .ag-empty, .ag-egg { animation: none !important; }
+  .ag-char:hover .ag-egg, .ag-char:focus-within .ag-egg { transform: none; }
 }
 
 .ag-avatar {
   flex: none;
-  width: 84px;
-  height: 84px;
+  width: 68px;
+  height: 68px;
   margin-bottom: 6px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--vp-c-bg);
   border: 2px solid #a66876;
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1.3), box-shadow 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1.3), box-shadow 0.25s ease, width 0.3s ease, height 0.3s ease;
 }
-.ag-avatar-sm { width: 44px; height: 44px; margin: 0; }
+.ag-char.open .ag-avatar { width: 44px; height: 44px; margin: 0; }
 .ag-avatar img {
   display: block;
   width: 100%;
@@ -427,16 +502,20 @@ onBeforeUnmount(() => {
 
 .ag-name {
   transition: color 0.2s ease;
+  display: block;
+  flex: none;
   max-width: 100%;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.25;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.ag-char.open .ag-name { font-size: 1.15rem; min-width: 0; flex: 0 1 auto; }
 .ag-num { font-size: 12.5px; color: var(--vp-c-text-2); }
 .ag-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; min-height: 18px; }
+.ag-char.open .ag-meta { min-height: 0; }
 .ag-badge {
   padding: 0 8px;
   font-size: 11px;
@@ -447,92 +526,38 @@ onBeforeUnmount(() => {
 }
 .ag-badge.is-soon { background: transparent; border: 1px dashed var(--vp-c-divider); }
 
-/* ---- popup ---- */
-.ag-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(10, 8, 12, 0.72);
+/* ---- expanded body ---- */
+.ag-body {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--hz-deep);
 }
-.ag-panel {
-  width: min(640px, 100%);
-  max-height: min(80vh, 640px);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: var(--vp-c-bg);
-  border: 1px solid #893d54;
-  border-radius: 22px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-  outline: none;
-}
-.ag-panel-head {
-  flex: none;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 18px;
-  background: var(--hz-card-bg);
-  border-bottom: 1px solid #893d54;
-}
-.ag-panel-title { font-size: 1.15rem; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ag-close {
-  margin-left: auto;
-  flex: none;
-  width: 34px;
-  height: 34px;
-  font-size: 24px;
-  line-height: 1;
-  color: var(--vp-c-text-2);
-  background: transparent;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.ag-close:hover { color: #fff; background: #893d54; border-color: #893d54; }
-
 .ag-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* max 3 per row */
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 14px;
   padding: 18px;
-  overflow-y: auto;
 }
 
-/* asset cards inside the popup (ModelViewer root).
-   NOTE: no transform on these - the viewer has its own fixed-position popup that a transform would trap,
-   so the lift uses `top` instead. */
+/* asset cards (ModelViewer root). The viewer's modal is teleported to <body>, so transforms here are safe,
+   and they run on the GPU (the old `top` animation re-laid-out the page on every frame = the lag). */
 .ag-grid > :deep(:not(.ag-soon)) {
-  position: relative;
-  top: 0;
   background: var(--hz-card-bg);
   border-color: #893d54;
   box-shadow: none;
-  transition: top 0.2s ease, border-color 0.2s ease;
 }
 .ag-grid > :deep(:not(.ag-soon):hover) {
-  top: -3px;
   border-color: #a66876;
   box-shadow: none;
 }
 
-/* staggered entrance: plays once when the popup opens (backwards fill so hover still works afterwards) */
-.ag-grid > * { animation: ag-rise 0.38s ease backwards; animation-delay: calc(var(--i, 0) * 45ms); }
+/* staggered entrance, starts once the card has grown (backwards fill so hover still works afterwards) */
+.ag-grid > * { animation: ag-rise 0.42s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: calc(min(var(--i, 0), 8) * 35ms + 120ms); }
 @keyframes ag-rise {
-  from { opacity: 0; top: 12px; }
-  to   { opacity: 1; top: 0; }
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.ag-grid > .ag-soon { position: relative; }
 @media (prefers-reduced-motion: reduce) { .ag-grid > * { animation: none; } }
-
-/* opacity only: a transform here would trap the viewer's own fixed-position popup */
-.ag-fade-enter-active, .ag-fade-leave-active { transition: opacity 0.18s ease; }
-.ag-fade-enter-from, .ag-fade-leave-to { opacity: 0; }
 
 /* ---- "soon" placeholder card ---- */
 .ag-soon {
@@ -551,14 +576,24 @@ onBeforeUnmount(() => {
 .ag-soon-tag { font-size: 11px; color: var(--vp-c-text-3); }
 
 /* ---- empty state ---- */
-.ag-empty { padding: 60px 0; text-align: center; color: var(--vp-c-text-2); }
+.ag-empty { padding: 60px 0; text-align: center; color: var(--vp-c-text-2); animation: ag-fade-up 0.5s ease backwards; }
 
 @media (max-width: 640px) {
+  .ag-bar { margin: 0; padding: 8px 6px; }
   .ag-tools { margin-left: 0; width: 100%; justify-content: space-between; }
-  .ag-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .ag-avatar { width: 68px; height: 68px; }
-  .ag-overlay { padding: 10px; }
-  .ag-panel { max-height: 92vh; border-radius: 18px; }
-  .ag-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 12px; }
+  .ag-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ag-head { padding: 14px 8px 12px; }
+  .ag-char.open .ag-head { padding: 12px 14px; }
+  .ag-avatar { width: 60px; height: 60px; }
+  .ag-char.open .ag-avatar { width: 40px; height: 40px; }
+  .ag-name { font-size: 0.9rem; }
+  .ag-char.open .ag-name { font-size: 1.05rem; }
+  .ag-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 12px; }
 }
+</style>
+
+<!-- global (unscoped): hide VitePress "On this page" on this page only, via the body class set above -->
+<style>
+.ag-page .VPLocalNavOutlineDropdown,
+.ag-page .VPDocAsideOutline { display: none !important; }
 </style>

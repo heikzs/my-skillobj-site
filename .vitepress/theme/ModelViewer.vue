@@ -1,3 +1,78 @@
+<script>
+// Shared by every ModelViewer on the page (a normal <script> runs once per module, not per card).
+// Thumbnails are rendered one at a time, when the browser is idle, and not while a card is still
+// expanding. Before this, every card started a WebGL render at once and the page stuttered.
+let chain = Promise.resolve()
+let startAfter = 0
+const sleep = ms => new Promise(r => setTimeout(r, ms))
+const idle = () => new Promise(r =>
+  typeof requestIdleCallback === 'function' ? requestIdleCallback(() => r(), { timeout: 60 }) : setTimeout(r, 0)
+)
+function enqueue(fn) {
+  const run = chain.then(async () => {
+    const wait = startAfter - performance.now()
+    if (wait > 0) await sleep(wait)
+    await idle()
+    return fn()
+  })
+  chain = run.catch(() => {})
+  return run
+}
+function holdThumbs(ms) { startAfter = Math.max(startAfter, performance.now() + ms) }
+
+// ---- thumbnail cache that survives page reloads (IndexedDB) ----
+// First visit renders each thumbnail once; every visit after that is instant. Bump THUMB_V if you
+// change a model or the look (unlit / brightness) and want fresh thumbnails.
+const THUMB_V = 'v1'
+let dbp = null
+function getDb() {
+  return (dbp ||= new Promise((res, rej) => {
+    const r = indexedDB.open('mv-thumbs', 1)
+    r.onupgradeneeded = () => r.result.createObjectStore('t')
+    r.onsuccess = () => res(r.result)
+    r.onerror = () => rej(r.error)
+  }))
+}
+async function idbGet(k) {
+  try {
+    const d = await getDb()
+    const v = await new Promise(res => {
+      const q = d.transaction('t').objectStore('t').get(k)
+      q.onsuccess = () => res(q.result || null)
+      q.onerror = () => res(null)
+    })
+    return v instanceof Blob ? URL.createObjectURL(v) : v
+  } catch (_) { return null }
+}
+async function idbSet(k, url) {
+  try {
+    const v = url.startsWith('blob:') ? await (await fetch(url)).blob() : url
+    const d = await getDb()
+    d.transaction('t', 'readwrite').objectStore('t').put(v, k)
+  } catch (_) { /* cache is optional */ }
+}
+async function thumbFor(glb, opts) {
+  const key = `${THUMB_V}|${glb}|${opts.unlit ? 1 : 0}|${opts.brightness}`
+  const hit = await idbGet(key)
+  if (hit) return hit // instant: no WebGL, no queue
+  holdThumbs(300) // brief pause so a card that is still expanding doesn't stutter
+  const { getThumb } = await import('./modelThumb.js')
+  const url = await enqueue(() => getThumb(glb, opts))
+  if (url) idbSet(key, url)
+  return url
+}
+
+// download three.js in the background the first time a card is hovered, so opening feels instant
+let prefetched = false
+function prefetchThree() {
+  if (prefetched) return
+  prefetched = true
+  import('three')
+  import('three/examples/jsm/controls/OrbitControls.js')
+  import('three/examples/jsm/loaders/GLTFLoader.js')
+}
+</script>
+
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { withBase } from 'vitepress'
@@ -15,6 +90,7 @@ const props = defineProps({
   anim: { type: Number, default: 0 },      // which animation clip to play (0 = first)
   brightness: { type: Number, default: 1 },// multiplies texture color when unlit (try 1.3 - 1.8)
   raw: { type: Boolean, default: false },  // zip only, shows a "raw" badge
+  tag: { type: String, default: '' },      // optional extra pill on the card, e.g. "weapon"
   card: { type: Boolean, default: false }, // render as a clickable card instead of an inline link
   thumb: { type: String, default: '' }     // optional image for the card; leave empty to render one from the .glb
 })
@@ -54,8 +130,7 @@ onMounted(() => {
     io.disconnect()
     io = null
     try {
-      const { getThumb } = await import('./modelThumb.js')
-      const url = await getThumb(list.value[0].glb, { unlit: props.unlit, brightness: props.brightness })
+      const url = await thumbFor(list.value[0].glb, { unlit: props.unlit, brightness: props.brightness })
       if (url) thumbUrl.value = url
     } catch (e) {
       console.warn('[ModelViewer] no thumbnail', e)
@@ -73,9 +148,10 @@ function modeLabel(m, i) {
 async function loadModeThumbs() {
   if (list.value.length < 2) return
   try {
-    const { getThumb } = await import('./modelThumb.js')
     for (let i = 0; i < list.value.length; i++) {
-      const url = await getThumb(list.value[i].glb, { unlit: props.unlit, brightness: props.brightness })
+      if (!open.value) return
+      if (modeThumbs.value[i]) continue
+      const url = await thumbFor(list.value[i].glb, { unlit: props.unlit, brightness: props.brightness })
       if (url) modeThumbs.value[i] = url
     }
   } catch (e) {
@@ -192,6 +268,7 @@ function switchTo(n) {
 }
 
 async function openViewer() {
+  if (renderer) cleanup() // reopened while the previous close animation was still running
   lockScroll()
   open.value = true
   error.value = ''
@@ -202,7 +279,6 @@ async function openViewer() {
   }
   loading.value = true
   await nextTick()
-  loadModeThumbs() // runs alongside the viewer, doesn't block it
 
   try {
     THREE = await import('three')
@@ -216,7 +292,7 @@ async function openViewer() {
     scene = new THREE.Scene()
     camera = new THREE.PerspectiveCamera(45, el.clientWidth / el.clientHeight, 0.01, 5000)
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)) // 3x screens render 2.25x the pixels for no visible gain
     renderer.setSize(el.clientWidth, el.clientHeight)
     el.appendChild(renderer.domElement)
 
@@ -246,6 +322,7 @@ async function openViewer() {
     resizeObs.observe(el)
 
     await showModel(1)
+    loadModeThumbs() // only after the model is on screen, one at a time
   } catch (e) {
     console.error(e)
     error.value = e.message || 'Could not load model'
@@ -271,8 +348,12 @@ function cleanup() {
 
 function close() {
   open.value = false
-  cleanup()
   unlockScroll()
+  // the 3D scene is torn down in onAfterLeave so the model stays visible while the modal fades out
+}
+
+function onAfterLeave() {
+  if (!open.value) cleanup()
 }
 
 onBeforeUnmount(() => {
@@ -283,7 +364,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <button v-if="card" ref="cardEl" type="button" class="mv-card" @click="openViewer">
+  <button v-if="card" ref="cardEl" type="button" class="mv-card" @click="openViewer" @pointerenter.once="prefetchThree" @focus.once="prefetchThree">
     <span class="mv-card-thumb">
       <img v-if="thumbUrl" :src="thumbUrl" alt="" />
       <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
@@ -294,6 +375,7 @@ onBeforeUnmount(() => {
     <span class="mv-card-badges">
       <span v-if="badge" class="mv-pill" :class="{ dim: !list.length }">{{ badge }}</span>
       <span v-if="raw" class="mv-pill raw">raw</span>
+      <span v-if="tag" class="mv-pill tag">{{ tag }}</span>
     </span>
   </button>
   <span v-else class="mv-item">
@@ -302,6 +384,7 @@ onBeforeUnmount(() => {
   </span>
 
   <Teleport to="body">
+   <Transition name="mv" @after-leave="onAfterLeave">
     <div v-if="open" class="mv-overlay" @click.self="close">
       <div class="mv-modal">
         <div class="mv-head">
@@ -317,6 +400,7 @@ onBeforeUnmount(() => {
               :key="i"
               type="button"
               class="mv-mode"
+              :style="{ '--i': i }"
               :class="{ active: current === i + 1 }"
               @click="switchTo(i + 1)"
             >
@@ -342,6 +426,7 @@ onBeforeUnmount(() => {
         <div v-if="!noPreview" class="mv-warn">This is just a preview. The look inside .blend file may be different</div>
       </div>
     </div>
+   </Transition>
   </Teleport>
 </template>
 
@@ -393,6 +478,9 @@ onBeforeUnmount(() => {
   transition: transform 0.25s ease;
 }
 .mv-card:hover .mv-card-thumb img { transform: scale(1.1) rotate(-3deg); }
+/* the thumbnail fades in when it arrives instead of popping in */
+.mv-card-thumb img { animation: mv-thumb-in 0.35s ease backwards; }
+@keyframes mv-thumb-in { from { opacity: 0; } to { opacity: 1; } }
 .mv-card-thumb svg { width: 34px; height: 34px; color: var(--vp-c-text-1); opacity: 0.16; }
 .mv-card-name {
   position: relative;
@@ -413,6 +501,7 @@ onBeforeUnmount(() => {
 }
 .mv-pill.dim { color: var(--vp-c-text-3); background: var(--vp-c-default-soft); }
 .mv-pill.raw { color: #fff; background: var(--ag-accent); }
+.mv-pill.tag { color: var(--ag-accent-text); background: transparent; border: 1px solid var(--ag-accent); line-height: 16px; }
 .mv-nodl { font-size: 13px; color: var(--vp-c-text-3); }
 
 /* ---- modal ---- */
@@ -420,6 +509,27 @@ onBeforeUnmount(() => {
   position: fixed; inset: 0; z-index: 1000;
   background: rgba(0, 0, 0, 0.6);
   display: flex; align-items: center; justify-content: center;
+}
+
+/* open / close: backdrop fades, the modal fades up (opacity + transform only, so it stays smooth) */
+.mv-enter-active, .mv-leave-active { transition: opacity 0.24s ease; }
+.mv-enter-from, .mv-leave-to { opacity: 0; }
+.mv-enter-active .mv-modal { transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.mv-leave-active .mv-modal { transition: transform 0.24s ease; }
+.mv-enter-from .mv-modal { transform: translateY(24px) scale(0.97); }
+.mv-leave-to .mv-modal { transform: translateY(12px) scale(0.98); }
+
+/* mode thumbnails rise in one after another, and the canvas fades in when the model appears */
+.mv-mode { animation: mv-rise 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: calc(var(--i, 0) * 60ms + 180ms); }
+@keyframes mv-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mv-canvas :deep(canvas) { animation: mv-fade 0.5s ease backwards; }
+@keyframes mv-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .mv-enter-active, .mv-leave-active, .mv-enter-active .mv-modal, .mv-leave-active .mv-modal { transition: none; }
+  .mv-mode, .mv-canvas :deep(canvas) { animation: none; }
 }
 
 .mv-modal {
