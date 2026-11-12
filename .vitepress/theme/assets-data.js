@@ -199,7 +199,9 @@ export const characters =
         "glb": "/models/SkillObj_Albedo_Magnum_Model.glb"
       },
       {
-        "name": "Canvas"
+        "name": "Canvas",
+        "src": "/skillobj/SkillObj_Albedo_Canvas_Model.zip",
+        "glb": "/models/SkillObj_Albedo_Canvas_Model.glb"
       }
     ],
     "id": "albedo"
@@ -617,10 +619,14 @@ export const characters =
     "aliases": "",
     "assets": [
       {
-        "name": "Bomb 01"
+        "name": "Bomb 01",
+        "src": "/skillobj/SkillObj_Klee_Bomb_01_Model.zip",
+        "glb": "/models/SkillObj_Klee_Bomb_01_Model.glb",
       },
       {
-        "name": "Bomb 02"
+        "name": "Bomb 02",
+        "src": "/skillobj/SkillObj_Klee_Bomb_02_Model.zip",
+        "glb": "/models/SkillObj_Klee_Bomb_02_Model.glb",
       },
       {
         "name": "Clover",
@@ -884,7 +890,9 @@ export const characters =
     "aliases": "",
     "assets": [
       {
-        "name": "Steelyard"
+        "name": "Steelyard",
+        "src": "/skillobj/.zip",
+        "glb": "/models/SkillObj_Feiyan_Steelyard_Model.glb"
       },
       {
         "name": "Dictionary"

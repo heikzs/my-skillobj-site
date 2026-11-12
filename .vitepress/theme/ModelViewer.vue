@@ -420,7 +420,7 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <div class="mv-foot">
-          <a v-if="src" :href="src" download class="mv-dl">Download</a>
+          <a v-if="src" :href="src" download class="mv-dl">Download .zip</a>
           <span v-else class="mv-nodl">download not uploaded yet</span>
         </div>
         <div v-if="!noPreview" class="mv-warn">This is just a preview. The look inside .blend file may be different</div>
