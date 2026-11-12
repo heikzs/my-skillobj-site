@@ -891,7 +891,7 @@ export const characters =
     "assets": [
       {
         "name": "Steelyard",
-        "src": "/skillobj/.zip",
+        "src": "/skillobj/SkillObj_Feiyan_Steelyard_Model.zip",
         "glb": "/models/SkillObj_Feiyan_Steelyard_Model.glb"
       },
       {
