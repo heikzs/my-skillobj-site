@@ -55,6 +55,24 @@ export const characters =
     "id": "lohen"
   },
   {
+    "name": "Illuga",
+    "icon": "/Illuga_icon.png",
+    "aliases": "illuga",
+    "assets": [
+      {
+        "name": "Bird",
+        "src": "/skillobj/SkillObj_Illuga_Bird_Model.zip",
+        "glb": "/models/SkillObj_Illuga_Bird_Model.glb"
+      },
+      {
+        "name": "Lamp",
+        "src": "/skillobj/SkillObj_Illuga_Lamp_Model.zip",
+        "glb": "/models/SkillObj_Illuga_Lamp_Model.glb"
+      }
+    ],
+    "id": "Illuga"
+  },
+  {
     "name": "Kinich",
     "icon": "/Kinich_Icon.png",
     "aliases": "Kinich",
@@ -241,9 +259,9 @@ export const characters =
     "aliases": "",
     "assets": [
       {
-        "name": "IceGrenade",
-        "src": "/skillobj/SkillObj_Aloy_IceGrenade_Model.zip",
-        "glb": "/models/SkillObj_Aloy_IceGrenade_Model.glb"
+        "name": "IcePot",
+        "src": "/skillobj/SkillObj_Aloy_IcePot_Model.zip",
+        "glb": "/models/SkillObj_Aloy_IcePot_Model.glb"
       }
     ],
     "id": "aloy"
@@ -512,6 +530,25 @@ export const characters =
       }
     ],
     "id": "clorinde"
+  },
+  {
+    "name": "Chevreuse",
+    "icon": "/Chevreuse_icon.png",
+    "aliases": "chevreuse",
+    "assets": [
+      {
+        "name": "Snack1",
+      },
+      {
+        "name": "Snack2",
+      },
+      {
+        "name": "Snack3",
+        "src": "/skillobj/.zip",
+        "glb": "/models/SkillObj_Chevreuse_Show_Snack3_Model.glb"
+      },
+    ],
+    "id": "chevreuse"
   },
   {
     "name": "Gaming",
@@ -886,8 +923,8 @@ export const characters =
   },
   {
     "name": "Yanfei",
-    "icon": "",
-    "aliases": "",
+    "icon": "Yanfei_icon.png",
+    "aliases": "yanfei",
     "assets": [
       {
         "name": "Steelyard",
@@ -895,10 +932,19 @@ export const characters =
         "glb": "/models/SkillObj_Feiyan_Steelyard_Model.glb"
       },
       {
-        "name": "Dictionary"
+        "name": "Dictionary",
+        "src": "/skillobj/SkillObj_Perform_FeiyanDictionary_Model.zip",
+        "glb": "/models/SkillObj_Perform_FeiyanDictionary_Model.glb"
       },
       {
-        "name": "WeightTrigger"
+        "name": "WeightSeal",
+        "src": "/skillobj/Skillobj_Feiyan_WeightSeal_Model.zip",
+        "glb": "/models/Skillobj_Feiyan_WeightSeal_Model.glb"
+      },
+      {
+        "name": "Weight",
+        "src": "/skillobj/SkillObj_Feiyan_Weight_Model.zip",
+        "glb": "/models/SkillObj_Feiyan_Weight_Model.glb"
       }
     ],
     "id": "yanfei"
@@ -954,7 +1000,9 @@ export const characters =
     "aliases": "",
     "assets": [
       {
-        "name": "Wing"
+        "name": "Wing",
+        "src": "/skillobj/SkillObj_Sara_Wing_Model.zip",
+        "glb": "/models/SkillObj_Sara_Wing_Model.glb"
       },
       {
         "name": "Uchiwa",
@@ -1121,8 +1169,8 @@ export const characters =
     "assets": [
       {
         "name": "Lyre",
-        "src": "/skillobj/Cs_Item_SkillObj_Lyre_Model.zip",
-        "glb": "/models/Cs_Item_SkillObj_Lyre_Model.glb"
+        "src": "/skillobj/Equip_Lyre.zip",
+        "glb": "/models/Equip_Lyre.glb"
       }
     ],
     "id": "venti"
